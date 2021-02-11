@@ -11,7 +11,7 @@ public class Zawodnik {
     private int iloscGoli;
     private int wartoscKontraktu;
 	boolean kontuzja;
-
+// komentarz
     public Zawodnik(String imie, String nazwisko, int wiek, String pozycja, int nr, int iloscGoli, int wartoscKontraktu, boolean kontuzja) {
         this.wiek = wiek;
         this.pozycja = pozycja;
