@@ -1,11 +1,14 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Uczen {
 
     private String imie;
     private String nazwisko;
     private int klasa;
     private String ulubionyPrzedmiot;
+    private ArrayList<String> uwagi = new ArrayList<String>();
 
     public Uczen(String imie, String nazwisko, int klasa) {
         this.imie = imie;
@@ -23,6 +26,7 @@ public class Uczen {
         }else {
             System.out.println(this.ulubionyPrzedmiot);
         }
+        System.out.println("Ilość uwag: " + uwagi.size());
     }
 
     public String getImie() {
