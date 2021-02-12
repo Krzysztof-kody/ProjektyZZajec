@@ -7,8 +7,8 @@ public class SortowanieBabelkowe {
         int[] zbior = new int[10];
 
         for (int i = 0; i < 10; i++){
-            //zbior[i] = Math.random();
-            System.out.println((int)(Math.random()*15 + 15));
+            zbior[i] = (int)(Math.random()*100 + 100);
+            System.out.println(zbior[i]);
         }
 
 
