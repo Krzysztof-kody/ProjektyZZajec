@@ -39,6 +39,7 @@ public class SortowanieBabelkowe {
         int czy = 0;
 
         for(int j = 0; j < 9 ; j++) {
+            czy = 0;
             for(int i = 0; i < 9-j ; i++) {
                 System.out.print(".");
                 if (zbior[i] > zbior[i + 1]) {
