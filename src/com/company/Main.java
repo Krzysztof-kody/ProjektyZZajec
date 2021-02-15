@@ -1,11 +1,45 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Uczen> uczniowie = new ArrayList<Uczen>();
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Ksiazka> biblioteka = new ArrayList<Ksiazka>();
+        biblioteka.add(new Ksiazka("Adam Mickiewicz", "Pan Tadeusz",200 , 1834,"bialo-czerwony"));
+        biblioteka.add(new Ksiazka("Antygona","Sofokles",37, 400, "żółty"));
+        biblioteka.add(new Ksiazka("Harry Potter","J.K. Rowling",437, 1997, "zielony"));
+
+
+        //biblioteka.get(0).fiszka();
+
+        Ksiazka ksiazkaTmp = new Ksiazka();
+        System.out.println("---| DODAWANIE KSIAZKI |------------");
+        System.out.println("Tytul ksiazki: ");
+        ksiazkaTmp.setTytul(sc.nextLine());
+        System.out.println("Autor:  ");
+        ksiazkaTmp.setAutor(sc.nextLine());
+        System.out.println("Ilosc stron: ");
+        ksiazkaTmp.setIloscStron(sc.nextInt());
+        System.out.println("Rok wydania: ");
+        ksiazkaTmp.setRokWydania(sc.nextInt());
+        System.out.println("Kolor:  ");
+        ksiazkaTmp.setKolor(sc.next());
+
+        biblioteka.add(ksiazkaTmp);
+
+        for(Ksiazka k: biblioteka){
+            k.fiszka();
+        }
+
+
+
+
+
+        /*      ArrayList<Uczen> uczniowie = new ArrayList<Uczen>();
         uczniowie.add(new Uczen("Jan", "Nowak", 1));
         uczniowie.get(0).informacjeOUczniu();
         uczniowie.get(0).setKlasa(2);

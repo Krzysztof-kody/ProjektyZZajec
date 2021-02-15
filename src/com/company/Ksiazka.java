@@ -74,8 +74,16 @@ public class Ksiazka {
         setRokWydania(0);
         setKolor(null);
         setWypozyczyl("");
-
     }
+
+    /**
+     *
+     * @param tytul tytul ksiazki
+     * @param autor
+     * @param iloscStron
+     * @param rokWydania
+     * @param kolor
+     */
 
     public Ksiazka(String tytul, String autor, int iloscStron, int rokWydania, String kolor){
         this.tytul = tytul;
