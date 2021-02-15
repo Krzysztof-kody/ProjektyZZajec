@@ -12,7 +12,7 @@ public class Main {
         biblioteka.add(new Ksiazka("Adam Mickiewicz", "Pan Tadeusz",200 , 1834,"bialo-czerwony"));
         biblioteka.add(new Ksiazka("Antygona","Sofokles",37, 400, "żółty"));
         biblioteka.add(new Ksiazka("Harry Potter","J.K. Rowling",437, 1997, "zielony"));
-
+//
         int wybor = -1;
         Ksiazka ksiazkaTmp = new Ksiazka();
 
