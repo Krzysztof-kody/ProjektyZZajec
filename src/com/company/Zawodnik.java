@@ -23,6 +23,14 @@ public class Zawodnik {
         this.kontuzja = kontuzja;
     }
 
+    public Zawodnik() {
+
+    }
+
+    public void statystyka(){
+        System.out.println(nr +". n: " + nazwisko + " i: " + imie);
+    }
+
     public int getWiek() {
         return wiek;
     }
