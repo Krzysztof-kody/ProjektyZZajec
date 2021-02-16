@@ -12,15 +12,6 @@ public class SortowaniePrzezWstawianie {
             a = (int)(Math.random()*100 + 100);
             System.out.print(a + " ");
             j = i;
-
-            /*
-            5 3 7 1 0
-
-            5 3
-            3 5 7 1
-            1 3 5 7 0
-            0 1 3 5 7
-             */
             zbior[i] = a;
             while(j > 0){
 
