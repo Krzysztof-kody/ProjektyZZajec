@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        Scanner sc1 = new Scanner(System.in);
         ArrayList<Ksiazka> biblioteka = new ArrayList<Ksiazka>();
         biblioteka.add(new Ksiazka("Adam Mickiewicz", "Pan Tadeusz",200 , 1834,"bialo-czerwony"));
         biblioteka.add(new Ksiazka("Antygona","Sofokles",37, 400, "żółty"));
@@ -20,11 +20,14 @@ public class Main {
             System.out.println("1. dodaj ksiazke");
             System.out.println("2. wypisz ksiegozbior");
             System.out.println("3. policz ksiegozbior");
-            System.out.println("4. szukaj ksiazek po roku");
+            System.out.println("4. szukaj ksiazki po roku");
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
             sc.nextLine();
+
+
+
 
             switch (wybor){
                 case 1:
