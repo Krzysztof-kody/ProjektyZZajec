@@ -8,7 +8,9 @@ public class Szkola {
 
         ArrayList<Uczen> uczniowie = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-
+        int wybor = -1;
+        int klasa = 0;
+        String txt;
         uczniowie.add(new Uczen("Jan", "Nowak", 1));
         uczniowie.add(new Uczen("Janina", "Kowalska", 2));
 
@@ -16,11 +18,14 @@ public class Szkola {
       //  uczniowie.get(1).informacjeOUczniu();
 
 
-        int wybor = -1;
+
         while (wybor != 0) {
 
             System.out.println(" --| MENU |-------");
             System.out.println(" 1. wypisz informacje o uczniach");
+            System.out.println(" 2. wyswietl oddział");
+            System.out.println(" 3. wyszukaj uczniow po imieniu");
+
             System.out.println("");
             System.out.println(" 0. zakoncz dzialanie aplikacji");
 
@@ -32,6 +37,24 @@ public class Szkola {
                         u.informacjeOUczniu();
                     }
                     break;
+                case 2:
+                    System.out.println("Klasa: ");
+                    klasa = sc.nextInt();
+                    for (Uczen u : uczniowie) {
+                        if(u.getKlasa() == klasa)
+                            u.informacjeOUczniu();
+                    }
+                    break;
+                case 3:
+                    System.out.println("Podaj imię: ");
+                    txt = sc.nextLine();
+                    for (Uczen u : uczniowie) {
+                        if(u.getImie().equals(txt))
+                            u.informacjeOUczniu();
+                    }
+
+                    break;
+
                 case 0:
                     break;
                 default:
