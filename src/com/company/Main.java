@@ -20,6 +20,7 @@ public class Main {
             System.out.println("1. dodaj ksiazke");
             System.out.println("2. wypisz ksiegozbior");
             System.out.println("3. policz ksiegozbior");
+            System.out.println("4. szukaj ksiazek po roku");
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
@@ -49,6 +50,18 @@ public class Main {
                 case 3:
                     System.out.println("Mamy: " + biblioteka.size() + " ksiażki/książek");
                     System.out.println();
+                    break;
+                case 4:
+                    int rok;
+                    System.out.println("Podaj szukany rok: ");
+                    rok = sc.nextInt();
+                    sc.nextLine();
+                    for(Ksiazka k: biblioteka){
+                        if(k.getRokWydania() == rok){
+                            k.fiszka();
+                        }
+                    }
+
                     break;
                 case 0: break;
                 default:
