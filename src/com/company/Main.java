@@ -19,6 +19,7 @@ public class Main {
             Ksiazka ksiazkaTmp = new Ksiazka();
             System.out.println("1. dodaj ksiazke");
             System.out.println("2. wypisz ksiegozbior");
+            System.out.println("3. policz ksiegozbior");
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
@@ -44,6 +45,10 @@ public class Main {
                     for(Ksiazka k: biblioteka){
                         k.fiszka();
                     }
+                    break;
+                case 3:
+                    System.out.println("Mamy: " + biblioteka.size() + " ksiażki/książek");
+                    System.out.println();
                     break;
                 case 0: break;
                 default:
