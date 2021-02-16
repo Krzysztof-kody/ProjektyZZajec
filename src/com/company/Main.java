@@ -21,13 +21,14 @@ public class Main {
             System.out.println("2. wypisz ksiegozbior");
             System.out.println("3. policz ksiegozbior");
             System.out.println("4. szukaj ksiazki po roku");
+
+            System.out.println("5. szukaj ksiazki po tytule");
+            System.out.println("6. szukaj ksiazki po autorze");
+
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
             sc.nextLine();
-
-
-
 
             switch (wybor){
                 case 1:
