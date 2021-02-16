@@ -12,7 +12,7 @@ public class Main {
         biblioteka.add(new Ksiazka("Adam Mickiewicz", "Pan Tadeusz",200 , 1834,"bialo-czerwony"));
         biblioteka.add(new Ksiazka("Antygona","Sofokles",37, 400, "żółty"));
         biblioteka.add(new Ksiazka("Harry Potter","J.K. Rowling",437, 1997, "zielony"));
-//
+
         int wybor = -1;
 
         while(wybor!=0){
@@ -35,8 +35,9 @@ public class Main {
                     ksiazkaTmp.setIloscStron(sc.nextInt());
                     System.out.println("Rok wydania: ");
                     ksiazkaTmp.setRokWydania(sc.nextInt());
+                    sc.nextLine();
                     System.out.println("Kolor:  ");
-                    ksiazkaTmp.setKolor(sc.next());
+                    ksiazkaTmp.setKolor(sc.nextLine());
                     biblioteka.add(ksiazkaTmp);
                     break;
                 case 2:
