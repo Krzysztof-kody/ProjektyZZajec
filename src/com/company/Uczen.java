@@ -8,6 +8,26 @@ public class Uczen {
     private String nazwisko;
     private int klasa;
     private String ulubionyPrzedmiot;
+    public static int test;
+
+    public Uczen(){ }
+
+    public int getTest() {
+        return test;
+    }
+
+    public void setTest(int test) {
+        this.test = test;
+    }
+
+    public ArrayList<String> getUwagi() {
+        return uwagi;
+    }
+
+    public void setUwagi(ArrayList<String> uwagi) {
+        this.uwagi = uwagi;
+    }
+
     private ArrayList<String> uwagi = new ArrayList<String>();
 
     public Uczen(String imie, String nazwisko, int klasa) {
