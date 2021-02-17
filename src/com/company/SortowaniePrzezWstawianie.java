@@ -1,8 +1,8 @@
 package com.company;
 // Taniec:
-//https://www.youtube.com/watch?v=ROalU379l3U
+// https://www.youtube.com/watch?v=ROalU379l3U
 // sc50:
-//https://www.youtube.com/watch?v=O0VbBkUvriI
+// https://www.youtube.com/watch?v=O0VbBkUvriI
 
 public class SortowaniePrzezWstawianie {
 
