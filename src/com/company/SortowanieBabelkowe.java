@@ -32,6 +32,16 @@ public class SortowanieBabelkowe {
             |_|
          |o|   |x|
 
+        0 1 2 3 4 5
+
+        5 8 2 6 4 0|
+        5 2 6 4 0|8
+        2 5 4 0|6 8
+
+
+        0 1 2 3 4 5
+
+        4 5 6 7 8 9
          */
 
         int c = 0;
