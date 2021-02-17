@@ -15,7 +15,6 @@ public class SortowanieBabelkowe {
         ArrayList<Integer> zbior1 = new ArrayList<>();
         for (int i = 0; i < 10; i++){
             zbior1.add((int)(Math.random()*100 + 100));
-            //System.out.println(zbior1.get(i));
         }
         /*
         1 4 2 5 8 3
@@ -57,10 +56,5 @@ public class SortowanieBabelkowe {
         for (int i = 0; i < 10; i++){
             System.out.print(zbior[i] + " ");
         }
-
-
-
-
     }
 }
-                                    //
