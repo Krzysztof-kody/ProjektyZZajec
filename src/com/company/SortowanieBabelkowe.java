@@ -1,7 +1,10 @@
 package com.company;
 
 import java.util.*;
+// Taniec:
 // https://youtu.be/lyZQPjUT5B4
+// cs50:
+// https://www.youtube.com/watch?v=RT-hUXUWQ2I
 public class SortowanieBabelkowe {
 
     public static void main(String[] args) {

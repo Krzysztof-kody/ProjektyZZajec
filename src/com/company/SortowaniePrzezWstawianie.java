@@ -1,5 +1,9 @@
 package com.company;
+// Taniec:
 //https://www.youtube.com/watch?v=ROalU379l3U
+// sc50:
+//https://www.youtube.com/watch?v=O0VbBkUvriI
+
 public class SortowaniePrzezWstawianie {
 
     public static void main(String[] args) {
