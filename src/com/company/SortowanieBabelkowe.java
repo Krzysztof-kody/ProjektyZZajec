@@ -10,6 +10,7 @@ public class SortowanieBabelkowe {
     public static void main(String[] args) {
         // 0 1 2 3 4 5 6 7 8 9
         int[] zbior = new int[10];
+        //int[] zbior = {1,2,3,4,6,5,7,8,9,10};
         for (int i = 0; i < 10; i++){
             zbior[i] = (int)(Math.random()*100 + 100);
             System.out.print(zbior[i] + " ");
@@ -17,14 +18,23 @@ public class SortowanieBabelkowe {
         System.out.println();
         System.out.println("------");
         int c;
-
-        for(int i = 0; i < 10; i++) {
-            if (zbior[i] > zbior[i + 1]) {
-                c = zbior[i];
-                zbior[i] = zbior[i + 1];
-                zbior[i + 1] = c;
+        boolean posortowany = true;
+        for(int j = 0; j < 9; j++){
+            posortowany = true;
+            for(int i = 0; i < 9-j; i++) {
+                System.out.print(".");
+                if (zbior[i] > zbior[i + 1]) {
+                    posortowany = false;
+                    c = zbior[i];
+                    zbior[i] = zbior[i + 1];
+                    zbior[i + 1] = c;
+                }
+            }
+            if(posortowany == true){
+                break;
             }
         }
+
 
         /*
         ArrayList<Integer> zbior1 = new ArrayList<>();
@@ -58,28 +68,10 @@ public class SortowanieBabelkowe {
 
         4 5 6 7 8 9
          */
-/*
-        int c = 0;
-        int czy = 0;
-
-        for(int j = 0; j < 9 ; j++) {
-            czy = 0;
-            for(int i = 0; i < 9-j ; i++) {
-                System.out.print(".");
-                if (zbior[i] > zbior[i + 1]) {
-                    czy++;
-                    c = zbior[i];
-                    zbior[i] = zbior[i + 1];
-                    zbior[i + 1] = c;
-                }
-            }
-            if(czy == 0) break;
-
-        }
         System.out.println();
 
         for (int i = 0; i < 10; i++){
             System.out.print(zbior[i] + " ");
-        }*/
+        }
     }
 }
