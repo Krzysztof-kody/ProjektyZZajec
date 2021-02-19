@@ -14,7 +14,19 @@ public class SortowanieBabelkowe {
             zbior[i] = (int)(Math.random()*100 + 100);
             System.out.print(zbior[i] + " ");
         }
+        System.out.println();
         System.out.println("------");
+        int c;
+
+        for(int i = 0; i < 10; i++) {
+            if (zbior[i] > zbior[i + 1]) {
+                c = zbior[i];
+                zbior[i] = zbior[i + 1];
+                zbior[i + 1] = c;
+            }
+        }
+
+        /*
         ArrayList<Integer> zbior1 = new ArrayList<>();
         for (int i = 0; i < 10; i++){
             zbior1.add((int)(Math.random()*100 + 100));
@@ -46,7 +58,7 @@ public class SortowanieBabelkowe {
 
         4 5 6 7 8 9
          */
-
+/*
         int c = 0;
         int czy = 0;
 
@@ -68,6 +80,6 @@ public class SortowanieBabelkowe {
 
         for (int i = 0; i < 10; i++){
             System.out.print(zbior[i] + " ");
-        }
+        }*/
     }
 }
