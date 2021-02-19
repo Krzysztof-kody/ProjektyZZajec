@@ -16,14 +16,17 @@ public class SortowaniePrzezWstawianie {
             System.out.print(zbior[i] + " ");
             j = i;
             while(j > 0){
-                if(zbior[j] >= zbior[j-1])
+                System.out.print(".");
+                if(zbior[j] >= zbior[j-1]){
                     break;
+                }
                 c = zbior[j-1];
                 zbior[j-1] = zbior[j];
                 zbior[j] = c;
                 j--;
             }
         }
+
         System.out.println();
         for (int i = 0; i < 10; i++) {
             System.out.print(zbior[i] + " ");
