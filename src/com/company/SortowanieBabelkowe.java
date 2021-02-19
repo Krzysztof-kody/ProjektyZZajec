@@ -35,7 +35,6 @@ public class SortowanieBabelkowe {
             }
         }
 
-
         /*
         ArrayList<Integer> zbior1 = new ArrayList<>();
         for (int i = 0; i < 10; i++){
