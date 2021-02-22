@@ -1,6 +1,5 @@
 package com.company.pliki;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
