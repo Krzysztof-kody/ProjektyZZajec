@@ -9,9 +9,10 @@ public class While {
             i++;
         }
 
-        while (1){
+        while (true){
             System.out.println(i);
-            if
+            if( i > 10)
+                break;
             i++;
 
         }
