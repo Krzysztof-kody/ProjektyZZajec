@@ -13,7 +13,7 @@ public class Plik {
 
         File file = new File("zespol.txt");
         Scanner in = new Scanner(file);
-        PrintWriter zapis = new PrintWriter("zespol1.txt");
+        //PrintWriter zapis = new PrintWriter("zespol1.txt");
 
         while(in.hasNext()) {
             Zawodnik tmp = new Zawodnik();

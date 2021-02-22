@@ -1,4 +1,4 @@
-package com.company;
+package com.company.sortowanie;
 // Taniec:
 // https://www.youtube.com/watch?v=ROalU379l3U
 // sc50:

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.sortowanie;
 /*
 selection sort
 Filmy:
