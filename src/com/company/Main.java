@@ -1,17 +1,36 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
         Scanner sc1 = new Scanner(System.in);
         ArrayList<Ksiazka> biblioteka = new ArrayList<Ksiazka>();
-        biblioteka.add(new Ksiazka("Adam Mickiewicz", "Pan Tadeusz",200 , 1834,"bialo-czerwony"));
-        biblioteka.add(new Ksiazka("Antygona","Sofokles",37, 400, "żółty"));
-        biblioteka.add(new Ksiazka("Harry Potter","J.K. Rowling",437, 1997, "zielony"));
+
+        File plik = new File("ksiazki.txt");
+        Scanner in = new Scanner(plik);
+        /*
+        slowo (enter)
+        slowo (enter)
+        liczba (enter)
+        liczba (enter)
+        slowo (enter)
+         */
+        while (in.hasNext()){
+            Ksiazka tmp = new Ksiazka(); // <---
+            tmp.setTytul(in.nextLine());
+            tmp.setAutor(in.nextLine());
+            tmp.setIloscStron(in.nextInt());
+            tmp.setRokWydania(in.nextInt());
+            in.nextLine();
+            tmp.setKolor(in.nextLine());
+            biblioteka.add(tmp);
+        }
 
         int wybor = -1;
 
