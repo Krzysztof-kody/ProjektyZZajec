@@ -1,22 +1,31 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Szkola {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Uczen> uczniowie = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int wybor = -1;
         int klasa = 0;
         String txt;
-        uczniowie.add(new Uczen("Jan", "Nowak", 1));
-        uczniowie.add(new Uczen("Janina", "Kowalska", 2));
+        String s1zPliku;
+        String s2zPliku;
+        int zPlikuI;
 
-      //  uczniowie.get(0).informacjeOUczniu();
-      //  uczniowie.get(1).informacjeOUczniu();
+        File nazwa = new File("uczniowie.txt");
+        Scanner in = new Scanner(nazwa);
 
+        while(in.hasNext()){
+            s1zPliku = in.nextLine();
+            s2zPliku = in.nextLine();
+            zPlikuI = in.nextInt();
+            uczniowie.add(new Uczen(s1zPliku,s2zPliku,zPlikuI));
+            if(in.hasNext()) in.nextLine();
+        }
 
 
         while (wybor != 0) {
@@ -25,12 +34,14 @@ public class Szkola {
             System.out.println(" 1. wypisz informacje o uczniach");
             System.out.println(" 2. wyswietl oddział");
             System.out.println(" 3. wyszukaj uczniow po imieniu");
+            System.out.println(" 4. wpisz ucznia");
 
             System.out.println("");
             System.out.println(" 0. zakoncz dzialanie aplikacji");
 
 
             wybor = sc.nextInt();
+            sc.nextLine();
             switch (wybor) {
                 case 1:
                     for (Uczen u : uczniowie) {
@@ -53,6 +64,15 @@ public class Szkola {
                             u.informacjeOUczniu();
                     }
 
+                    break;
+                case 4:
+                    System.out.println("--| DODAWANIE UCZNIA |-------");
+                    System.out.print("Nazwisko: ");
+                    sc.nextLine();
+                    System.out.print("Imie: ");
+                    sc.nextLine();
+                    System.out.print("Klasa: ");
+                    sc.nextInt();
                     break;
 
                 case 0:
