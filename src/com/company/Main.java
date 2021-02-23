@@ -38,7 +38,7 @@ public class Main {
         Scanner sc1 = new Scanner(System.in);
         ArrayList<Ksiazka> biblioteka = new ArrayList<>();
         loadBiblio(biblioteka);
-      //1  ladowaniePierwszejKsiazki();
+      //  ladowaniePierwszejKsiazki();
         int wybor = -1;
 
         while(wybor!=0){
