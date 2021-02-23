@@ -76,6 +76,7 @@ public class Szkola {
                     FileWriter fw = new FileWriter("uczniowie.txt", true); //ustawienie true by dodawać do pliku
                     PrintWriter out = new PrintWriter(fw);
                     out.println(s1zPliku + "\n" + s2zPliku + "\n" + zPlikuI);
+                    out.close();
                     uczniowie.add(new Uczen(s1zPliku, s2zPliku, zPlikuI));
                     break;
 
