@@ -1,13 +1,12 @@
 package com.company;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         Scanner sc1 = new Scanner(System.in);
         ArrayList<Ksiazka> biblioteka = new ArrayList<Ksiazka>();
@@ -51,19 +50,29 @@ public class Main {
 
             switch (wybor){
                 case 1:
+
+                    FileWriter fw = new FileWriter("ksiazki.txt", true); //ustawienie true by dodawać do pliku
+                    PrintWriter out = new PrintWriter(fw);
+
                     System.out.println("---| DODAWANIE KSIAZKI |------------");
                     System.out.println("Tytul ksiazki: ");
                     ksiazkaTmp.setTytul(sc.nextLine());
+                    out.println(ksiazkaTmp.getTytul());
                     System.out.println("Autor:  ");
                     ksiazkaTmp.setAutor(sc.nextLine());
+                    out.println(ksiazkaTmp.getAutor());
                     System.out.println("Ilosc stron: ");
                     ksiazkaTmp.setIloscStron(sc.nextInt());
+                    out.println(ksiazkaTmp.getIloscStron());
                     System.out.println("Rok wydania: ");
                     ksiazkaTmp.setRokWydania(sc.nextInt());
+                    out.println(ksiazkaTmp.getRokWydania());
                     sc.nextLine();
                     System.out.println("Kolor:  ");
                     ksiazkaTmp.setKolor(sc.nextLine());
+                    out.println(ksiazkaTmp.getKolor());
                     biblioteka.add(ksiazkaTmp);
+                    out.close();
                     break;
                 case 2:
                     for(Ksiazka k: biblioteka){

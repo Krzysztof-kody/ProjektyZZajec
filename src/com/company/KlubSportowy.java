@@ -1,15 +1,33 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class KlubSportowy {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList<Zawodnik> druzynaPilkarska = new ArrayList<>();
-        druzynaPilkarska.add(new Zawodnik("Jan", "Nowak",20, "śpo",10, 2,1000,false));
-        druzynaPilkarska.add(new Zawodnik("Marian", "Cma",22, "br",1, 1,1000,false));
+
+        File file = new File("zespol.txt");
+        Scanner in = new Scanner(file);
+
+        while(in.hasNext()) {
+            Zawodnik tmp = new Zawodnik();
+            tmp.setImie(in.nextLine());
+            tmp.setNazwisko(in.nextLine());
+            tmp.setWiek(in.nextInt());
+            in.nextLine();
+            tmp.setPozycja(in.nextLine());
+            tmp.setIloscGoli(in.nextInt());
+            tmp.setNr(in.nextInt());
+            tmp.setWartoscKontraktu(in.nextInt());
+            if(in.hasNext())
+                in.nextLine();
+            druzynaPilkarska.add(tmp);
+        }
 
         int wybor = -1;
         Scanner sc = new Scanner(System.in);
