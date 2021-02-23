@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Main {
 
 
-    public static void loadBiblio(ArrayList<Ksiazka> L) throws FileNotFoundException {
-        L.clear();
+    public static void loadBiblio(ArrayList<Ksiazka> biblio) throws FileNotFoundException {
+        biblio.clear();
         File plik = new File("ksiazki.txt");
         Scanner in = new Scanner(plik);
         while (in.hasNext()){
@@ -19,7 +19,7 @@ public class Main {
             tmp.setRokWydania(in.nextInt());
             in.nextLine();
             tmp.setKolor(in.nextLine());
-            L.add(tmp);
+            biblio.add(tmp);
         }
 
     }
