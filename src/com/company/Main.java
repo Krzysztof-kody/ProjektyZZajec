@@ -6,6 +6,16 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void ladowaniePierwszejKsiazki() throws FileNotFoundException {
+        File p = new File("ksiazki.txt");
+        Scanner sc = new Scanner(p);
+        System.out.println(sc.nextLine());
+        System.out.println(sc.nextLine());
+        System.out.println(sc.nextInt());
+        System.out.println(sc.nextInt());
+        sc.nextLine();
+        System.out.println(sc.nextLine());
+    }
 
     public static void loadBiblio(ArrayList<Ksiazka> biblio) throws FileNotFoundException {
         biblio.clear();
@@ -21,7 +31,6 @@ public class Main {
             tmp.setKolor(in.nextLine());
             biblio.add(tmp);
         }
-
     }
 
     public static void main(String[] args) throws IOException {
@@ -29,7 +38,7 @@ public class Main {
         Scanner sc1 = new Scanner(System.in);
         ArrayList<Ksiazka> biblioteka = new ArrayList<>();
         loadBiblio(biblioteka);
-
+      //1  ladowaniePierwszejKsiazki();
         int wybor = -1;
 
         while(wybor!=0){
