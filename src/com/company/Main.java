@@ -49,10 +49,8 @@ public class Main {
 
             switch (wybor){
                 case 1:
-
                     FileWriter fw = new FileWriter("ksiazki.txt", true); //ustawienie true by dodawać do pliku
                     PrintWriter out = new PrintWriter(fw);
-
                     System.out.println("---| DODAWANIE KSIAZKI |------------");
                     System.out.println("Tytul ksiazki: ");
                     out.println(sc.nextLine());
