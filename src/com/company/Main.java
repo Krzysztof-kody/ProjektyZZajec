@@ -6,20 +6,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        Scanner sc = new Scanner(System.in);
-        Scanner sc1 = new Scanner(System.in);
-        ArrayList<Ksiazka> biblioteka = new ArrayList<Ksiazka>();
 
+    public static void loadBiblio(ArrayList<Ksiazka> L) throws FileNotFoundException {
+        L.clear();
         File plik = new File("ksiazki.txt");
         Scanner in = new Scanner(plik);
-        /*
-        slowo (enter)
-        slowo (enter)
-        liczba (enter)
-        liczba (enter)
-        slowo (enter)
-         */
         while (in.hasNext()){
             Ksiazka tmp = new Ksiazka(); // <---
             tmp.setTytul(in.nextLine());
@@ -28,8 +19,16 @@ public class Main {
             tmp.setRokWydania(in.nextInt());
             in.nextLine();
             tmp.setKolor(in.nextLine());
-            biblioteka.add(tmp);
+            L.add(tmp);
         }
+
+    }
+
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        Scanner sc1 = new Scanner(System.in);
+        ArrayList<Ksiazka> biblioteka = new ArrayList<>();
+        loadBiblio(biblioteka);
 
         int wybor = -1;
 
@@ -56,23 +55,18 @@ public class Main {
 
                     System.out.println("---| DODAWANIE KSIAZKI |------------");
                     System.out.println("Tytul ksiazki: ");
-                    ksiazkaTmp.setTytul(sc.nextLine());
-                    out.println(ksiazkaTmp.getTytul());
+                    out.println(sc.nextLine());
                     System.out.println("Autor:  ");
-                    ksiazkaTmp.setAutor(sc.nextLine());
-                    out.println(ksiazkaTmp.getAutor());
+                    out.println(sc.nextLine());
                     System.out.println("Ilosc stron: ");
-                    ksiazkaTmp.setIloscStron(sc.nextInt());
-                    out.println(ksiazkaTmp.getIloscStron());
+                    out.println(sc.nextInt());
                     System.out.println("Rok wydania: ");
-                    ksiazkaTmp.setRokWydania(sc.nextInt());
-                    out.println(ksiazkaTmp.getRokWydania());
+                    out.println(sc.nextInt());
                     sc.nextLine();
                     System.out.println("Kolor:  ");
-                    ksiazkaTmp.setKolor(sc.nextLine());
-                    out.println(ksiazkaTmp.getKolor());
-                    biblioteka.add(ksiazkaTmp);
+                    out.println(sc.nextLine());
                     out.close();
+                    loadBiblio(biblioteka);
                     break;
                 case 2:
                     for(Ksiazka k: biblioteka){
