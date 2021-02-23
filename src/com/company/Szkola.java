@@ -1,12 +1,11 @@
 package com.company;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Szkola {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         ArrayList<Uczen> uczniowie = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int wybor = -1;
@@ -68,11 +67,16 @@ public class Szkola {
                 case 4:
                     System.out.println("--| DODAWANIE UCZNIA |-------");
                     System.out.print("Nazwisko: ");
-                    sc.nextLine();
+                    s1zPliku = sc.nextLine();
                     System.out.print("Imie: ");
-                    sc.nextLine();
+                    s2zPliku = sc.nextLine();
                     System.out.print("Klasa: ");
-                    sc.nextInt();
+                    zPlikuI = sc.nextInt();
+                    sc.nextLine();
+                    FileWriter fw = new FileWriter("uczniowie.txt", true); //ustawienie true by dodawać do pliku
+                    PrintWriter out = new PrintWriter(fw);
+                    out.println(s1zPliku + "\n" + s2zPliku + "\n" + zPlikuI);
+                    uczniowie.add(new Uczen(s1zPliku, s2zPliku, zPlikuI));
                     break;
 
                 case 0:
