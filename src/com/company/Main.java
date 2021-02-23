@@ -51,6 +51,8 @@ public class Main {
             System.out.println("5. szukaj ksiazki po tytule");
             System.out.println("6. szukaj ksiazki po autorze");
 
+            System.out.println("7. usuń książkę");
+
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
@@ -76,7 +78,10 @@ public class Main {
                     loadBiblio(biblioteka);
                     break;
                 case 2:
+                    int i = 0;
                     for(Ksiazka k: biblioteka){
+                        System.out.print(i + ". ");
+                        i++;
                         k.fiszka();
                     }
                     break;
@@ -96,20 +101,31 @@ public class Main {
                     }
 
                     break;
+
+                case 7:
+                    System.out.println("!!! USUWANIE !!!");
+                    System.out.println("Podaj nr ksiąki do usunięcia: ");
+                    int ksiazka = sc.nextInt();
+                    sc.nextLine();
+                    biblioteka.remove(ksiazka);
+                    PrintWriter outP = new PrintWriter("ksiazki.txt");
+                    // for(licznik; warunek; zmiana){}
+                    // for(element: zbior){ element}
+                    for (Ksiazka k: biblioteka){
+                        outP.println(k.getTytul());
+                        outP.println(k.getAutor());
+                        outP.println(k.getIloscStron());
+                        outP.println(k.getRokWydania());
+                        outP.println(k.getKolor());
+                    }
+                    outP.close();
+                    loadBiblio(biblioteka);
+                    break;
                 case 0: break;
                 default:
                     System.out.println("nie rozumien :(");
             }
         }
 
-        /*      ArrayList<Uczen> uczniowie = new ArrayList<Uczen>();
-        uczniowie.add(new Uczen("Jan", "Nowak", 1));
-        uczniowie.get(0).informacjeOUczniu();
-        uczniowie.get(0).setKlasa(2);
-        System.out.println();
-        uczniowie.get(0).informacjeOUczniu();
-     /*   ArrayList<Zawodnik> klub = new ArrayList<>();
-        klub.add(new Zawodnik("Jan", "Nowak", 22, "śpo", 10, 2, 1000, false));
-*/
     }
 }
