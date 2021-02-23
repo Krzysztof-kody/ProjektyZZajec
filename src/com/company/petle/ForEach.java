@@ -13,9 +13,9 @@ public class ForEach {
         }
 
         // pętla foreach - "przejdzie" przez cały zbiór liczby wyciągając
-        // do zmiennej liczba kolejne elementy zbioru
+        // do zmiennej 'liczba' kolejne elementy zbioru
         // dzięki temu możemy wypisywać zmmieniające się wartości
-        // zmiennej liczba
+        // zmiennej 'liczba'
         for (int liczba : liczby) {
             System.out.print(liczba + " ");
         }
