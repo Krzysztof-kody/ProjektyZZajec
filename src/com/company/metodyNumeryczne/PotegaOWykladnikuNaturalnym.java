@@ -11,7 +11,7 @@ public class PotegaOWykladnikuNaturalnym{
 
     2^2 = 1 * 2 * 2 = 4
 
-    przyjęcie takiej definicji pozwala na łątwe wyznaczenie
+    przyjęcie takiej definicji pozwala na łatwe wyznaczenie
     zerowej potęgi dowolnej liczby np.
 
     4^0 = 1
