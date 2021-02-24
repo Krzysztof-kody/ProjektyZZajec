@@ -1,8 +1,25 @@
-package com.company;
+package com.company.metodyNumeryczne;
 
 import java.util.Scanner;
 
 public class CiagFibonacciego {
+    /*
+
+    Ciąg Fibonacciego - n-ty element ciągu tworzymy sumując dwa
+    poprzedzajace go elementy. dwoma pierwszymi elementami ciągu
+    są 0 i 1.
+
+    Przykład:
+    0 1 1 2 3 5 8 13 21 34 ...
+
+    rekurencyjny wzór na n-ty element ciągu:
+
+         | 0 gdy n = 0
+    f_n =| 1 gdy n = 1
+         | f_(n-2) + f_(n-1) gdy n > 1
+
+     */
+
     public static void main(String[] args) {
 
         /*
