@@ -46,19 +46,19 @@ public class SortowaniePrzezWybor {
 
          */
 
-        for (int i = 0; i < 9; i++) {
-            min = wartosci[i];
-            id = i;
-            for (int j = i + 1; j < 10; j++) {
-                if(min > wartosci[j]) {
-                    min = wartosci[j];
-                    id = j;
-                }
+    for (int i = 0; i < 9; i++) {
+        min = wartosci[i];
+        id = i;
+        for (int j = i + 1; j < 10; j++) {
+            if(min > wartosci[j]) {
+                min = wartosci[j];
+                id = j;
             }
-            c = wartosci[i];
-            wartosci[i] = min;
-            wartosci[id] = c;
         }
+        c = wartosci[i];
+        wartosci[i] = min;
+        wartosci[id] = c;
+    }
     for (int i: wartosci){
         System.out.print(i + " ");
     }
