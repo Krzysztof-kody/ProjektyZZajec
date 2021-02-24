@@ -25,8 +25,11 @@ public class SortowaniePrzezWybor {
         /*
         GENEROWANIE
          */
+
+        // 27 - 87
+
         for(int i = 0; i < 10 ; i++) {
-            wartosci[i] = (int) (Math.random() * 100);
+            wartosci[i] = (int) (Math.random() * 60 + 27);
         }
 
         /*
@@ -47,7 +50,6 @@ public class SortowaniePrzezWybor {
             min = wartosci[i];
             id = i;
             for (int j = i + 1; j < 10; j++) {
-                System.out.print(".");
                 if(min > wartosci[j]) {
                     min = wartosci[j];
                     id = j;
@@ -57,6 +59,9 @@ public class SortowaniePrzezWybor {
             wartosci[i] = min;
             wartosci[id] = c;
         }
+    for (int i: wartosci){
+        System.out.print(i + " ");
+    }
 
     }
 }
