@@ -20,6 +20,12 @@ public class CiagFibonacciego {
 
      */
 
+    public static int ciagFibonacciegoRekurencyjnie(int n){
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return ciagFibonacciegoRekurencyjnie(n - 2) + ciagFibonacciegoRekurencyjnie(n - 1);
+    }
+
     public static void main(String[] args) {
 
         /*
@@ -41,11 +47,13 @@ public class CiagFibonacciego {
         System.out.println("Podaj ilość elelemtów ciągu");
         int il = sc.nextInt();
         for(int i = 0; i<il; i++){
-            System.out.print(a + ": ");
+            System.out.print(a + " ");
             c = a;
             a = b;
             b = b + c;
         }
+        System.out.println();
 
+        System.out.println("Element nr " + il + " ciągu Fibonacciego wyznaczony rekurencyjnie: " + ciagFibonacciegoRekurencyjnie(il));
     }
 }
