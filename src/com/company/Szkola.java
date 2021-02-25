@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Szkola {
     public static void main(String[] args) throws IOException {
-        ArrayList<Uczen> uczniowie = new ArrayList<>();
+       ArrayList<Uczen> uczniowie = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int wybor = -1;
         int klasa = 0;
@@ -25,7 +25,6 @@ public class Szkola {
             uczniowie.add(new Uczen(tmpImie,tmpNazwisko,tmpKlasa));
             if(in.hasNext()) in.nextLine();
         }
-
 
         while (wybor != 0) {
 
