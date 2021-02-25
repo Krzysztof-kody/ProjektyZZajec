@@ -11,18 +11,18 @@ public class Szkola {
         int wybor = -1;
         int klasa = 0;
         String txt;
-        String s1zPliku;
-        String s2zPliku;
-        int zPlikuI;
+        String tmpImie;
+        String tmpNazwisko;
+        int tmpKlasa;
 
         File nazwa = new File("uczniowie.txt");
         Scanner in = new Scanner(nazwa);
 
         while(in.hasNext()){
-            s1zPliku = in.nextLine();
-            s2zPliku = in.nextLine();
-            zPlikuI = in.nextInt();
-            uczniowie.add(new Uczen(s1zPliku,s2zPliku,zPlikuI));
+            tmpImie = in.nextLine();
+            tmpNazwisko = in.nextLine();
+            tmpKlasa = in.nextInt();
+            uczniowie.add(new Uczen(tmpImie,tmpNazwisko,tmpKlasa));
             if(in.hasNext()) in.nextLine();
         }
 
@@ -67,17 +67,17 @@ public class Szkola {
                 case 4:
                     System.out.println("--| DODAWANIE UCZNIA |-------");
                     System.out.print("Nazwisko: ");
-                    s1zPliku = sc.nextLine();
+                    tmpImie = sc.nextLine();
                     System.out.print("Imie: ");
-                    s2zPliku = sc.nextLine();
+                    tmpNazwisko = sc.nextLine();
                     System.out.print("Klasa: ");
-                    zPlikuI = sc.nextInt();
+                    tmpKlasa = sc.nextInt();
                     sc.nextLine();
                     FileWriter fw = new FileWriter("uczniowie.txt", true); //ustawienie true by dodawać do pliku
                     PrintWriter out = new PrintWriter(fw);
-                    out.println(s1zPliku + "\n" + s2zPliku + "\n" + zPlikuI);
+                    out.println(tmpImie + "\n" + tmpNazwisko + "\n" + tmpKlasa);
                     out.close();
-                    uczniowie.add(new Uczen(s1zPliku, s2zPliku, zPlikuI));
+                    uczniowie.add(new Uczen(tmpImie, tmpNazwisko, tmpKlasa));
                     break;
 
                 case 0:
