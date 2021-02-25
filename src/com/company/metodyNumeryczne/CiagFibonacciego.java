@@ -20,6 +20,7 @@ public class CiagFibonacciego {
 
      */
 
+    // ładny zapis, ale okropna złożoność obliczeniowa i pamięciowa - wspróbój wyznaczyć np. 45ty element ciągu
     public static int ciagFibonacciegoRekurencyjnie(int n){
         if (n == 0) return 0;
         if (n == 1) return 1;

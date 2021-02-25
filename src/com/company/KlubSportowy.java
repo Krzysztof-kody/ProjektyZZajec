@@ -1,13 +1,12 @@
 package com.company;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class KlubSportowy {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
         ArrayList<Zawodnik> druzynaPilkarska = new ArrayList<>();
 
@@ -60,7 +59,6 @@ public class KlubSportowy {
                     sc.nextLine();
                     System.out.print("pozycja: ");
                     tmpZawodnik.setPozycja(sc.nextLine());
-
                     System.out.print("ilosc goli: ");
                     tmpZawodnik.setIloscGoli(sc.nextInt());
                     System.out.print("wartosc kontraktu: ");
@@ -70,6 +68,10 @@ public class KlubSportowy {
                     sc.nextLine();
                     tmpZawodnik.setKontuzja(false);
                     druzynaPilkarska.add(tmpZawodnik);
+                    FileWriter fw = new FileWriter("zespol.txt", true); //ustawienie true by dodawać do pliku
+                    PrintWriter out = new PrintWriter(fw);
+                    out.println(tmpZawodnik.getImie() + "\n" + tmpZawodnik.getNazwisko() + "\n" + tmpZawodnik.getWiek() + "\n" + tmpZawodnik.getPozycja() + " \n" + tmpZawodnik.getIloscGoli() + "\n" + tmpZawodnik.getNr() + "\n" + tmpZawodnik.getWartoscKontraktu());
+                    out.close();
 
                     break;
 
