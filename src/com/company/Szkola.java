@@ -81,9 +81,13 @@ public class Szkola {
                     uczniowie.add(new Uczen(tmpImie, tmpNazwisko, tmpKlasa));
                     break;
                 case 5:
-
-                        uczniowie.remove(1);
-
+                    System.out.println("Podaj ineks ucznia: ");
+                    uczniowie.remove(sc.nextInt());
+                    PrintWriter out1 = new PrintWriter("uczniowie.txt");
+                    for (Uczen u: uczniowie) {
+                        out1.println(u.getImie() + "\n" + u.getNazwisko() + "\n" + u.getKlasa());
+                    }
+                    out1.close();
                     break;
                 case 0:
                     break;
