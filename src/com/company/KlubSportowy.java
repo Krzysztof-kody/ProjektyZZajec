@@ -35,6 +35,7 @@ public class KlubSportowy {
             System.out.println("---| MENU |------------");
             System.out.println("1. wyswietl zawodnikow");
             System.out.println("2. dodaj zawodnika");
+            System.out.println("3. szukaj zawodnika po nr");
 
             System.out.println();
             System.out.println("0. zakoncz program");
@@ -72,7 +73,6 @@ public class KlubSportowy {
                     PrintWriter out = new PrintWriter(fw);
                     out.println(tmpZawodnik.getImie() + "\n" + tmpZawodnik.getNazwisko() + "\n" + tmpZawodnik.getWiek() + "\n" + tmpZawodnik.getPozycja() + " \n" + tmpZawodnik.getIloscGoli() + "\n" + tmpZawodnik.getNr() + "\n" + tmpZawodnik.getWartoscKontraktu());
                     out.close();
-
                     break;
 
                 case 0: break;
