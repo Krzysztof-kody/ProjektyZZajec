@@ -33,17 +33,19 @@ public class Szkola {
             System.out.println(" 2. wyswietl oddział");
             System.out.println(" 3. wyszukaj uczniow po imieniu");
             System.out.println(" 4. wpisz ucznia");
+            System.out.println(" 5. usuń ucznia");
 
             System.out.println("");
             System.out.println(" 0. zakoncz dzialanie aplikacji");
-
 
             wybor = sc.nextInt();
             sc.nextLine();
             switch (wybor) {
                 case 1:
-                    for (Uczen u : uczniowie) {
-                        u.informacjeOUczniu();
+
+                    for(int i = 0; i < uczniowie.size(); i++){
+                        System.out.print( i + ". ");
+                        uczniowie.get(i).informacjeOUczniu();
                     }
                     break;
                 case 2:
@@ -78,7 +80,11 @@ public class Szkola {
                     out.close();
                     uczniowie.add(new Uczen(tmpImie, tmpNazwisko, tmpKlasa));
                     break;
+                case 5:
 
+                        uczniowie.remove(1);
+
+                    break;
                 case 0:
                     break;
                 default:
