@@ -6,6 +6,14 @@ https://www.youtube.com/watch?v=1mh2vilbZMg
 https://www.youtube.com/watch?v=7zuGmKfUt7s
 
 
+n = 1000
+
+- zł liniowa
+    1000
+
+-zł n^2
+    1 000 000
+
  */
 
 /*
@@ -30,11 +38,11 @@ zbiorWartosci[a] = zbiorWartosci[a] + 1
 zbiorWartosci[a]++
 zbiorWartosci[a] += 1
 
-0
+0 0
 1 . . (2)
 2 . (1)
 3 . . . (3)
-4
+4 0
 5 . (1)
 6 . (1)
 
