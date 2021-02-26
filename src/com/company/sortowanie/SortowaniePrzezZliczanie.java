@@ -3,6 +3,19 @@ package com.company.sortowanie;
 Filmy:
 
 https://www.youtube.com/watch?v=1mh2vilbZMg
+https://www.youtube.com/watch?v=7zuGmKfUt7s
+
+ */
+
+/*
+
+1 2 1 2 1 2
+
+0 1 2
+0 0 4
+
+1 2 3 4 5 6
+1 1 1 2 2 2
 
  */
 
@@ -43,9 +56,12 @@ public class SortowaniePrzezZliczanie {
         for (int i = 0; i < 10; i++) {
             wartosci[tab[i]]++;
         }
-        for (int i = 0; i < 11; i++) {
 
+        int id = 0;
+        for (int i = 0; i < 11; i++) {
             for (int j = 0; j < wartosci[i]; j++) {
+                tab[id] = i;
+                id++;
                 System.out.print(i + " ");
             }
         }
