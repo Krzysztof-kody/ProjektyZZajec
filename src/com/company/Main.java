@@ -52,7 +52,7 @@ public class Main {
             System.out.println("6. szukaj ksiazki po autorze");
 
             System.out.println("7. usuń książkę");
-
+            System.out.println("8. edytuj dane książki");
             System.out.println("0. zakoncz program");
             System.out.print(":");
             wybor = sc.nextInt();
@@ -120,6 +120,39 @@ public class Main {
                     }
                     outP.close();
                     loadBiblio(biblioteka);
+                    break;
+                case 8:
+                    System.out.println("--| Edycja danych |----");
+                    System.out.println("Podaj nr ksiazki: ");
+                    int k = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("a. zmień tytuł (" + biblioteka.get(k).getTytul() + ")");
+                    System.out.println("b. zmień autora (" + biblioteka.get(k).getAutor() + ")");
+                    System.out.println("c. zmień datę (" + biblioteka.get(k).getRokWydania() + ")");
+                    System.out.println("x. rezygnuj z edycji");
+
+                    System.out.print(": ");
+                    String znak = sc.nextLine();
+
+                    switch (znak){
+                        case "a":
+                            biblioteka.get(k).setTytul(sc.nextLine());
+                            break;
+                        case "b":
+                            biblioteka.get(k).setAutor( sc.nextLine());
+                            break;
+                        case "c":
+                            biblioteka.get(k).setRokWydania( sc.nextInt());
+                            sc.nextLine();
+                            break;
+                        case "x":
+                            break;
+                        default:
+                            System.out.println("Nie mam takiej opcji");
+                            break;
+                    }
+                   // biblioteka.get(5).setTytul("Do usunięcia 2");
+
                     break;
                 case 0: break;
                 default:

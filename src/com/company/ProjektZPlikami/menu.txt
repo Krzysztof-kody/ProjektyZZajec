@@ -1,0 +1,2 @@
+P;Kaczka w pomaranczach;300;70;Znany, polski smak kaczki uzupełnionu słodyczą i kwaśnością hiszpańskich pomarańczy;450;
+N;Sok z jabłek;300;10;Świeżo wyciśnięte prawdziwe polskie owoce. Smak lata i dzieciństwa;0;
