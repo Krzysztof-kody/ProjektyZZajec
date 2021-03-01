@@ -151,15 +151,7 @@ public class Main {
                             System.out.println("Nie mam takiej opcji");
                             break;
                     }
-                    PrintWriter outPl = new PrintWriter("ksiazki.txt");
-                    for (Ksiazka ks: biblioteka){
-                        outPl.println(ks.getTytul());
-                        outPl.println(ks.getAutor());
-                        outPl.println(ks.getIloscStron());
-                        outPl.println(ks.getRokWydania());
-                        outPl.println(ks.getKolor());
-                    }
-                    outPl.close();
+
 
                     break;
                 case 0: break;
