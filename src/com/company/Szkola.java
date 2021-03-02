@@ -95,9 +95,9 @@ public class Szkola {
 
                     int idE = sc.nextInt();
                     sc.nextLine();
-                    System.out.println("a. Edytuj nazwisko (" + uczniowie.get(idE).getNazwisko());
-                    System.out.println("b. Edytuj imię (" + uczniowie.get(idE).getImie());
-                    System.out.println("c. edytuj klasę (" + uczniowie.get(idE).getKlasa());
+                    System.out.println("a. Edytuj nazwisko (" + uczniowie.get(idE).getNazwisko()+ ")");
+                    System.out.println("b. Edytuj imię (" + uczniowie.get(idE).getImie() + ")");
+                    System.out.println("c. edytuj klasę (" + uczniowie.get(idE).getKlasa()+ ")");
                     System.out.println("x. zrezygnuj");
                     String wybE = sc.nextLine();
 
