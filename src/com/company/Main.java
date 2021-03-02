@@ -47,10 +47,8 @@ public class Main {
             System.out.println("2. wypisz ksiegozbior");
             System.out.println("3. policz ksiegozbior");
             System.out.println("4. szukaj ksiazki po roku");
-
             System.out.println("5. szukaj ksiazki po tytule");
             System.out.println("6. szukaj ksiazki po autorze");
-
             System.out.println("7. usuń książkę");
             System.out.println("8. edytuj dane książki");
             System.out.println("0. zakoncz program");
@@ -122,7 +120,16 @@ public class Main {
                     }
 
                     break;
-
+                case 6:
+                    System.out.print("Podaj tytuł autora: ");
+                    String szukajA = sc.nextLine();
+                    for (int jj = 0; jj < biblioteka.size(); jj++) {
+                        if(biblioteka.get(jj).getAutor().equals(szukajA)){
+                            System.out.print(jj + ". ");
+                            biblioteka.get(jj).fiszka();
+                        }
+                    }
+                    break;
                 case 7:
                     System.out.println("!!! USUWANIE !!!");
                     System.out.println("Podaj nr ksiąki do usunięcia: ");

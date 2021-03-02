@@ -34,6 +34,7 @@ public class Szkola {
             System.out.println(" 3. wyszukaj uczniow po imieniu");
             System.out.println(" 4. wpisz ucznia");
             System.out.println(" 5. usuń ucznia");
+            System.out.println(" 6. edytuj dane ucznia");
 
             System.out.println("");
             System.out.println(" 0. zakoncz dzialanie aplikacji");
@@ -81,7 +82,7 @@ public class Szkola {
                     uczniowie.add(new Uczen(tmpImie, tmpNazwisko, tmpKlasa));
                     break;
                 case 5:
-                    System.out.println("Podaj ineks ucznia: ");
+                    System.out.println("Podaj indeks ucznia: ");
                     uczniowie.remove(sc.nextInt());
                     PrintWriter out1 = new PrintWriter("uczniowie.txt");
                     for (Uczen u: uczniowie) {
@@ -89,6 +90,38 @@ public class Szkola {
                     }
                     out1.close();
                     break;
+                case 6:
+                    System.out.println("Podaj indeks ucznia: ");
+
+                    int idE = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("a. Edytuj nazwisko (" + uczniowie.get(idE).getNazwisko());
+                    System.out.println("b. Edytuj imię (" + uczniowie.get(idE).getImie());
+                    System.out.println("c. edytuj klasę (" + uczniowie.get(idE).getKlasa());
+                    System.out.println("x. zrezygnuj");
+                    String wybE = sc.nextLine();
+
+                    switch (wybE){
+                        case "a":
+                            uczniowie.get(idE).setNazwisko(sc.nextLine());
+                            break;
+                        case "b":
+                            break;
+                        case "c":
+                            break;
+                        case "x":
+                            break;
+                        default:
+                            System.out.println("nie ma takiej opcji");
+                    }
+
+                    PrintWriter outE = new PrintWriter("uczniowie.txt");
+                    for (Uczen u: uczniowie) {
+                        outE.println(u.getImie() + "\n" + u.getNazwisko() + "\n" + u.getKlasa());
+                    }
+                    outE.close();
+                    break;
+
                 case 0:
                     break;
                 default:
