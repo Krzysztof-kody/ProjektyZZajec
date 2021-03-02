@@ -21,5 +21,13 @@ public class CiagZnakow {
         // sprawdzenie ile liter jest w ciągu znaków
         String ciag003 = "01234567";
         System.out.println("Ciąg '" + ciag003 +"' składa się z " + ciag003.length() + " liter");
+
+        // sklejenie ciągów znaków
+        String ciag004 = "0123";
+        String ciag005 = "4567";
+        ciag004 += ciag005;
+        System.out.println("Ciąg po sklejeniu: " + ciag004);
+
+
     }
 }
