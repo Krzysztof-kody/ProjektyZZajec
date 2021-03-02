@@ -28,6 +28,7 @@ public class KlubSportowy {
             druzynaPilkarska.add(tmp);
         }
 
+
         int wybor = -1;
         Scanner sc = new Scanner(System.in);
 
@@ -36,6 +37,7 @@ public class KlubSportowy {
             System.out.println("1. wyswietl zawodnikow");
             System.out.println("2. dodaj zawodnika");
             System.out.println("3. szukaj zawodnika po nr");
+            System.out.println("4. usun zawodnika");
 
             System.out.println();
             System.out.println("0. zakoncz program");
@@ -74,7 +76,47 @@ public class KlubSportowy {
                     out.println(tmpZawodnik.getImie() + "\n" + tmpZawodnik.getNazwisko() + "\n" + tmpZawodnik.getWiek() + "\n" + tmpZawodnik.getPozycja() + " \n" + tmpZawodnik.getIloscGoli() + "\n" + tmpZawodnik.getNr() + "\n" + tmpZawodnik.getWartoscKontraktu());
                     out.close();
                     break;
+                case 3:
+                    System.out.print("Podaj nr zawodnika: ");
+                    int nr = sc.nextInt();
+                    sc.nextLine();
+                    int id = 0;
+                    for(Zawodnik z: druzynaPilkarska){
+                        if(z.getNr() == nr){
+                            z.statystyka();
+                            break;
+                        }
+                        id++;
+                    }
+                    if(id < druzynaPilkarska.size()) {
+                        System.out.println(id);
+                    }
+                    else{
+                        System.out.println("Nie mamy takiego zawodnika");
+                    }
+                    break;
+                case 4:
+                    System.out.print("Podaj nr zawodnika: ");
+                    int nrU = sc.nextInt();
+                    sc.nextLine();
+                    int idU = 0;
+                    for(Zawodnik z: druzynaPilkarska){
+                        if(z.getNr() == nrU){
+                            break;
+                        }
+                        idU++;
+                    }
+                    if(idU < druzynaPilkarska.size()) {
+                        druzynaPilkarska.remove(idU);
+                        //FileWriter fw = new FileWriter("zespol.txt", true); //ustawienie true by dodawać do pliku
+                        PrintWriter outU = new PrintWriter("zespol.txt");
 
+                        out.println(tmpZawodnik.getImie() + "\n" + tmpZawodnik.getNazwisko() + "\n" + tmpZawodnik.getWiek() + "\n" + tmpZawodnik.getPozycja() + " \n" + tmpZawodnik.getIloscGoli() + "\n" + tmpZawodnik.getNr() + "\n" + tmpZawodnik.getWartoscKontraktu());
+                        out.close();
+                    }
+                    else{
+                        System.out.println("Nie mamy takiego zawodnika");
+                    }
                 case 0: break;
                 default:
                     System.out.println("Nie mam takiej opcji na liście");
