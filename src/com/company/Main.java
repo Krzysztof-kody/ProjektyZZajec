@@ -101,6 +101,16 @@ public class Main {
                     }
 
                     break;
+                case 5:
+                    System.out.print("Podaj tytuł książki: ");
+                    String szukajT = sc.nextLine();
+                    for (int j = 0; j < biblioteka.size(); j++) {
+                        if(biblioteka.get(j).getTytul().equals(szukajT)){
+                            System.out.print(j + ". ");
+                            biblioteka.get(j).fiszka();
+                        }
+                    }
+                    break;
 
                 case 7:
                     System.out.println("!!! USUWANIE !!!");
@@ -129,8 +139,10 @@ public class Main {
                     System.out.println("a. zmień tytuł (" + biblioteka.get(k).getTytul() + ")");
                     System.out.println("b. zmień autora (" + biblioteka.get(k).getAutor() + ")");
                     System.out.println("c. zmień datę (" + biblioteka.get(k).getRokWydania() + ")");
-                    System.out.println("x. rezygnuj z edycji");
+                    System.out.println("d. zmień ilość stron (" + biblioteka.get(k).getIloscStron() + ")");
+                    System.out.println("e. zmień kolor (" + biblioteka.get(k).getKolor() + ")");
 
+                    System.out.println("x. rezygnuj z edycji");
                     System.out.print(": ");
                     String znak = sc.nextLine();
 
@@ -145,14 +157,28 @@ public class Main {
                             biblioteka.get(k).setRokWydania( sc.nextInt());
                             sc.nextLine();
                             break;
+                        case "d":
+                            biblioteka.get(k).setIloscStron(sc.nextInt());
+                            sc.nextLine();
+                            break;
+                        case "e":
+                            biblioteka.get(k).setKolor(sc.nextLine());
+                            break;
                         case "x":
                             break;
                         default:
                             System.out.println("Nie mam takiej opcji");
                             break;
                     }
-
-
+                    PrintWriter outE = new PrintWriter("ksiazki.txt");
+                    for (Ksiazka kE: biblioteka){
+                        outE.println(kE.getTytul());
+                        outE.println(kE.getAutor());
+                        outE.println(kE.getIloscStron());
+                        outE.println(kE.getRokWydania());
+                        outE.println(kE.getKolor());
+                    }
+                    outE.close();
                     break;
                 case 0: break;
                 default:
