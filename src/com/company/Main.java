@@ -104,12 +104,23 @@ public class Main {
                 case 5:
                     System.out.print("Podaj tytuł książki: ");
                     String szukajT = sc.nextLine();
+                    /*
                     for (int j = 0; j < biblioteka.size(); j++) {
                         if(biblioteka.get(j).getTytul().equals(szukajT)){
                             System.out.print(j + ". ");
                             biblioteka.get(j).fiszka();
                         }
                     }
+                     */
+                    int j = 0;
+                    for (Ksiazka k: biblioteka) {
+                        if(k.getTytul().equals(szukajT)){
+                            System.out.print(j + ". ");
+                            k.fiszka();
+                        }
+                        j++;
+                    }
+
                     break;
 
                 case 7:
