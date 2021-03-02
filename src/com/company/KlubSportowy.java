@@ -107,12 +107,12 @@ public class KlubSportowy {
                         idU++;
                     }
                     if(idU < druzynaPilkarska.size()) {
-                        druzynaPilkarska.remove(idU);
-                        //FileWriter fw = new FileWriter("zespol.txt", true); //ustawienie true by dodawać do pliku
+                        druzynaPilkarska.remove(idU); // <---
                         PrintWriter outU = new PrintWriter("zespol.txt");
-
-                        out.println(tmpZawodnik.getImie() + "\n" + tmpZawodnik.getNazwisko() + "\n" + tmpZawodnik.getWiek() + "\n" + tmpZawodnik.getPozycja() + " \n" + tmpZawodnik.getIloscGoli() + "\n" + tmpZawodnik.getNr() + "\n" + tmpZawodnik.getWartoscKontraktu());
-                        out.close();
+                        for(Zawodnik z: druzynaPilkarska) {
+                            outU.println(z.getImie() + "\n" + z.getNazwisko() + "\n" + z.getWiek() + "\n" + z.getPozycja() + " \n" + z.getIloscGoli() + "\n" + z.getNr() + "\n" + z.getWartoscKontraktu());
+                        }
+                        outU.close();
                     }
                     else{
                         System.out.println("Nie mamy takiego zawodnika");
