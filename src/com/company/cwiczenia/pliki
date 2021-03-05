@@ -1,0 +1,4 @@
+1. Program czytający od użytkownika 2 wartości liczbowe i wpisujący je do pliku - plik.txt
+2. Program czytający od użytkownika 2 wartości liczbowe i 2 tekstowe
+    (przemiennie: liczba, tekst, liczba, tekst) wpisujący je do pliku - plik1.txt
+3. Wypisz zawartość plikow stworzonych w poprzednich zadaniach
