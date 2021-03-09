@@ -3,3 +3,12 @@
 2. Program czytający od użytkownika 2 wartości liczbowe i 2 tekstowe
     (przemiennie: liczba, tekst, liczba, tekst) wpisujący je do pliku - plik1.txt
 3. Wypisz zawartość plikow stworzonych w poprzednich zadaniach
+
+4. Odczytać z pliku 2 wartośi liczbowe, zsumować je i dopisać sumę do pliku
+
+5. Odczytać z pliku 4 slowa zapisane w osobnych liniach np.
+slowo1
+slowo2
+slowo3
+slowo4
+i wyświetlić je w 1 linii. Słowa mają być oddzielone spacjami a poostatnim słowie musi pojawić sie kropka, bez spacji.
