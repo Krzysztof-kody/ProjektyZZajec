@@ -12,5 +12,6 @@ public class odczyt {
         while(sc.hasNext()){
             System.out.println(sc.nextLine());
         }
+
     }
 }
