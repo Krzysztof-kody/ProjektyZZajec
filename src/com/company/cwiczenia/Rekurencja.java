@@ -54,6 +54,13 @@ public class Rekurencja {
 
      */
 
+    static double pierwiastek(double n, double A, double B){
+        double sr = (A+B)/2;
+        if(B-A < 0.000001) return sr;
+        if(sr * sr > n) return pierwiastek(n, A, sr);
+        return pierwiastek(n, sr, B);
+    }
+
     static double potega(double a, int n){
         if(n == 0) return 1;
         return potega(a, n - 1) * a;
@@ -64,10 +71,20 @@ public class Rekurencja {
         return silnia(n-1)*n;
     }
 
+    static void petla(int n){
+        if(n > 0) {
+            System.out.println("wypisanie");
+            System.out.println(n);
+            System.out.println("petla(" + (n-1) + ")");
+            petla(n - 1);
+        }
+    }
+
     public static void main(String[] args){
         System.out.println("silnia: " + silnia(5));
         System.out.println("potega: " + potega(2, 10));
-
-
+        System.out.println("pierwiastek kw z 9: " + pierwiastek(9,0,9));
+        System.out.println("pierwiastek kw z 0.4: " + pierwiastek(0.4,0,1));
+        petla(5);
     }
 }
