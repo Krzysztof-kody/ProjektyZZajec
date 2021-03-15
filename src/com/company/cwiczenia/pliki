@@ -14,3 +14,9 @@ slowo4
 i wyświetlić je w 1 linii. Słowa mają być oddzielone spacjami a poostatnim słowie musi pojawić sie kropka, bez spacji.
 
 6. Wczytać liczbę n z pliku oraz slowo i wyświetlić to słowo n razy w konsoli
+
+Dodatkowe
+
+Wczytac z pliku 4 liczby i wypisac je rosnaco
+Wczytać z pliku 6 liczb i 2 słowa. Wypisać pierwsze słowo n razy (n - największa liczba) oraz drugie słowo m razy (m - najmniejsza liczba).
+Wczytać z pliku 6 słów i wypisać je w kolejności od najmniejszej liczby liter do największej
