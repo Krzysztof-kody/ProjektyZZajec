@@ -11,7 +11,6 @@ public class DodatkoweB {
     public static void main(String[] args) throws FileNotFoundException {
         File liczby = new File("src/com/company/cwiczenia/DB.txt");
         Scanner sc = new Scanner(liczby);
-
         int n = sc.nextInt();
         int m = n;
         int c;
