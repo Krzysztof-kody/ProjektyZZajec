@@ -23,7 +23,6 @@ public class ZadD3 {
                 }
             }
         }
-
         for(String s: slowa){
             System.out.println(s);
         }
