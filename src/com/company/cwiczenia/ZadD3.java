@@ -13,10 +13,16 @@ public class ZadD3 {
         for (int i = 0; i < 6; i++) {
             slowa[i] = zPliku.nextLine();
         }
-
-        if(slowa[i].length() > slowa[i+1].length())
-        ...
-
+        String c;
+        for (int j = 0; j < 5; j++) {
+            for (int i = 0; i < 5; i++) {
+                if (slowa[i].length() > slowa[i + 1].length()) {
+                    c = slowa[i];
+                    slowa[i] = slowa[i+1];
+                    slowa[i+1] = c;
+                }
+            }
+        }
 
         for(String s: slowa){
             System.out.println(s);
