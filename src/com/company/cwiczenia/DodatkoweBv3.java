@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DodatkoweBv3 {
 
     public static void main (String[] args) throws IOException {
-        File plik = new File("osiem.plik");
+        File plik = new File("src/com/company/cwiczenia/DB.txt");
         Scanner in = new Scanner(plik);
         int[] zbior = new int[6];
         int n = 0;
@@ -21,13 +21,9 @@ public class DodatkoweBv3 {
             if (zbior[i] > n) {
                 n = zbior[i];
             }
-        }
-        for (int i = 0; i < 5; i++){
             if (m >zbior[i]) {
                 m = zbior[i];
-
             }
-
         }
         for(int i=0;i<n;i++){
             System.out.println(a);
