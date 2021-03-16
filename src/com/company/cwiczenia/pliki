@@ -11,7 +11,7 @@ slowo1
 slowo2
 slowo3
 slowo4
-i wyświetlić je w 1 linii. Słowa mają być oddzielone spacjami a poostatnim słowie musi pojawić sie kropka, bez spacji.
+i wyświetlić je w 1 linii. Słowa mają być oddzielone spacjami a po ostatnim słowie musi pojawić sie kropka, bez spacji.
 
 6. Wczytać liczbę n z pliku oraz slowo i wyświetlić to słowo n razy w konsoli
 
