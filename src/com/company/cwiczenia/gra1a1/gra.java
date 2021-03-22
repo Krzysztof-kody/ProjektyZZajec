@@ -26,7 +26,7 @@ public class gra {
             System.out.println("Zdrowie: " + ("#").repeat(zdrowie/10));
             System.out.println("Zdrowie: " + zdrowie);
 
-/ss
+//ss
 
         }
 
