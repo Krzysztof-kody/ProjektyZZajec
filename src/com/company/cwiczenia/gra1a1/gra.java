@@ -25,7 +25,9 @@ public class gra {
         public void statystyki(){
 
             System.out.print("Zdrowie: ");
-            for(int i =0; i<zdrowie/10; i++) System.out.print("#");
+            for(int i =0; i<zdrowie/5; i++) System.out.print("#");
+            System.out.println();
+            for(int i =0; i<zdrowie/5; i++) System.out.print("#");
             System.out.println();
 
             System.out.println("Zdrowie: " + zdrowie);
