@@ -7,7 +7,7 @@ public class gra {
         int wiek;
         int zdrowie;
         int energia;
-        int glod;
+        int najedzenie;
         int nastroj;
         String imie;
         public Stworek(String imie, String kolor){
@@ -16,11 +16,17 @@ public class gra {
             wiek = 100;
             zdrowie = 100;
             energia = 100;
-            glod = 100;
+            najedzenie = 100;
             nastroj = 100;
         }
         public void statystyki() {
-        ....
+            System.out.println("Imie " + imie);
+            System.out.println("Kolor " + kolor);
+            System.out.println("Wiek " + wiek);
+            System.out.println("Zdrowie " + zdrowie);
+            System.out.println("Energia " + energia);
+            System.out.println("Sytosc " + najedzenie);
+            System.out.println("Nastrój " + nastroj);
         }
     }
 
