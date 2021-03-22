@@ -23,11 +23,12 @@ public class gra {
         }
 
         public void statystyki(){
-            System.out.println("Zdrowie: " + ("#").repeat(zdrowie/10));
+
+            System.out.print("Zdrowie: ");
+            for(int i =0; i<zdrowie/10; i++) System.out.print("#");
+            System.out.println();
+
             System.out.println("Zdrowie: " + zdrowie);
-
-//ss
-
         }
 
         public void nakarm(int kcal){
