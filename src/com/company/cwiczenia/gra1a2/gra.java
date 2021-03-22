@@ -15,12 +15,18 @@ public class gra {
             this.kolor = kolor;
             wiek = 100;
             zdrowie = 100;
+            energia = 100;
+            glod = 100;
+            nastroj = 100;
         }
-
+        public void statystyki() {
+        ....
+        }
     }
 
     public static void main(String[] args){
         Stworek tama = new Stworek("Stefan", "różowy");
+        tama.statystyki();
     }
 
 }
