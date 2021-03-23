@@ -11,24 +11,21 @@ public class gra {
             zdrowie = 20;
             sytosc = 100;
         }
-
         public String pasek(int n){
-
             String p = "";
-
             p += "|";
             for(int i = 0; i < n/5; i++)
                 p += "#";
 
-            for(int i = 0; i < 20 - zdrowie/5; i++)
-                System.out.print(" ");
+            for(int i = 0; i < 20 - n/5; i++)
+                p +=" ";
 
-            System.out.print("|");
+            p +="|";
             return p;
         }
         public void statystyki(){
-            System.out.println("Zdrowie    " + zdrowie);
-            System.out.println("Najedzenie " + sytosc);
+            System.out.println("Zdrowie    " + pasek(zdrowie));
+            System.out.println("Najedzenie " + pasek(sytosc));
         }
 
     }
