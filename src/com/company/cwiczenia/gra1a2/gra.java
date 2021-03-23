@@ -14,10 +14,23 @@ public class gra {
             this.imie = imie;
             this.kolor = kolor;
             wiek = 100;
-            zdrowie = 100;
+            zdrowie = 30;
             energia = 100;
             najedzenie = 100;
             nastroj = 100;
+        }
+        public String pasek(){
+            String p = "";
+            p += "|";
+            for (int i = 0; i < zdrowie/5; i++) {
+                p += "#";
+            }
+            for (int i = 0; i < 20 - zdrowie/5; i++) {
+                System.out.print(" ");
+            }
+            System.out.print("|");
+
+            return p;
         }
         public void statystyki() {
             System.out.println("Imie " + imie);
