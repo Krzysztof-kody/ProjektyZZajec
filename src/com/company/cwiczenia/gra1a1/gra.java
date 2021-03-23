@@ -13,7 +13,7 @@ public class gra {
         public Stworek(String imie){
             this.imie = imie;
             zdrowie = 100;
-            energia = 100;
+            energia = 50;
             szczescie = 100;
             sytosc = 100;
             toaleta = 100;
@@ -22,15 +22,23 @@ public class gra {
             System.out.println("Cześć, jestem " + imie + "!");
         }
 
+        public String pasek(int n, int max){
+            String p ="";
+            p += "|";
+            for(int i =0; i<n/5; i++)
+                p +="#";
+            for(int i =0; i<(max-n)/5; i++)
+                p +=" ";
+
+            p += "|";
+
+            return p;
+        }
+
         public void statystyki(){
 
-            System.out.print("Zdrowie: ");
-            for(int i =0; i<zdrowie/5; i++) System.out.print("#");
-            System.out.println();
-            for(int i =0; i<zdrowie/5; i++) System.out.print("#");
-            System.out.println();
-
-            System.out.println("Zdrowie: " + zdrowie);
+            System.out.println("Zdrowie: " + pasek(zdrowie, 100));
+            System.out.println("Energia: " + pasek(energia, 100));
         }
 
         public void nakarm(int kcal){
