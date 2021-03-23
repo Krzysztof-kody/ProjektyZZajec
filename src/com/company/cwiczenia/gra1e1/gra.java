@@ -28,9 +28,17 @@ public class gra {
             System.out.println("Najedzenie " + pasek(sytosc));
         }
 
+        public void nakarm(int n) {
+            sytosc += n;
+            if(sytosc > 100){
+                sytosc = 100;
+            }
+        }
     }
     public static void main(String[] args){
         Stworek st = new Stworek("Kulek");
+        st.statystyki();
+        st.nakarm(30);
         st.statystyki();
     }
 }
