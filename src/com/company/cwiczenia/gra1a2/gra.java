@@ -19,16 +19,16 @@ public class gra {
             najedzenie = 100;
             nastroj = 100;
         }
-        public String pasek(){
+        public String pasek(int n){
             String p = "";
             p += "|";
-            for (int i = 0; i < zdrowie/5; i++) {
+            for (int i = 0; i < n/5; i++) {
                 p += "#";
             }
-            for (int i = 0; i < 20 - zdrowie/5; i++) {
-                System.out.print(" ");
+            for (int i = 0; i < 20 - n/5; i++) {
+                p +=" ";
             }
-            System.out.print("|");
+            p += "|";
 
             return p;
         }
@@ -36,8 +36,8 @@ public class gra {
             System.out.println("Imie " + imie);
             System.out.println("Kolor " + kolor);
             System.out.println("Wiek " + wiek);
-            System.out.println("Zdrowie " + zdrowie);
-            System.out.println("Energia " + energia);
+            System.out.println("Zdrowie " + pasek(zdrowie));
+            System.out.println("Energia " + pasek(energia));
             System.out.println("Sytosc " + najedzenie);
             System.out.println("Nastrój " + nastroj);
         }
