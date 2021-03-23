@@ -16,7 +16,7 @@ public class gra {
             wiek = 100;
             zdrowie = 30;
             energia = 100;
-            najedzenie = 100;
+            najedzenie = 70;
             nastroj = 100;
         }
         public String pasek(int n){
@@ -38,13 +38,20 @@ public class gra {
             System.out.println("Wiek " + wiek);
             System.out.println("Zdrowie " + pasek(zdrowie));
             System.out.println("Energia " + pasek(energia));
-            System.out.println("Sytosc " + najedzenie);
-            System.out.println("Nastrój " + nastroj);
+            System.out.println("Sytosc  " + pasek(najedzenie));
+            System.out.println("Nastrój " + pasek(nastroj));
+        }
+        public void jedz(int jedzenie){
+            najedzenie += jedzenie;
+            if(najedzenie >100)
+                    najedzenie = 100;
         }
     }
 
     public static void main(String[] args){
         Stworek tama = new Stworek("Stefan", "różowy");
+        tama.statystyki();
+        tama.jedz(100);
         tama.statystyki();
     }
 
