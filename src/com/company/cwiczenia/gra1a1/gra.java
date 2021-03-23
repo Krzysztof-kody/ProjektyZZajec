@@ -35,14 +35,69 @@ public class gra {
             return p;
         }
 
-        public void statystyki(){
+        public int getZdrowie() {
+            return zdrowie;
+        }
 
-            System.out.println("Zdrowie: " + pasek(zdrowie, 100));
-            System.out.println("Energia: " + pasek(energia, 100));
+        public void setZdrowie(int zdrowie) {
+            this.zdrowie = zdrowie;
+        }
+
+        public int getEnergia() {
+            return energia;
+        }
+
+        public void setEnergia(int energia) {
+            this.energia = energia;
+        }
+
+        public int getSzczescie() {
+            return szczescie;
+        }
+
+        public void setSzczescie(int szczescie) {
+            this.szczescie = szczescie;
+        }
+
+        public int getSytosc() {
+            return sytosc;
+        }
+
+        public void setSytosc(int sytosc) {
+            this.sytosc += sytosc;
+        }
+
+        public int getToaleta() {
+            return toaleta;
+        }
+
+        public void setToaleta(int toaleta) {
+            this.toaleta += toaleta;
+            if(this.toaleta <= 0){
+                System.out.println("Twój stworek zrobił w spodnie");
+                zdrowie -= 20;
+                szczescie -= 70;
+                this.toaleta = 100;
+            }
+        }
+
+        public void statystyki(){
+            System.out.println("Zdrowie:   " + pasek(zdrowie, 100));
+            System.out.println("Energia:   " + pasek(energia, 100));
+            System.out.println("Szczescie: " + pasek(szczescie, 100));
+            System.out.println("Sytosc:    " + pasek(sytosc, 100));
+            System.out.println("Toaleta:   " + pasek(toaleta, 100));
+
         }
 
         public void nakarm(int kcal){
             sytosc += kcal;
+            if(sytosc > 100){
+                sytosc = 100;
+                System.out.println("Uważaj, " + imie + " jest przekarmiony/na");
+                zdrowie -=10;
+                setToaleta(-50);
+            }
         }
 
     }
@@ -51,6 +106,14 @@ public class gra {
 
         Stworek tama = new Stworek("Stefan");
         tama.przywitajSie();
+        tama.statystyki();
+        tama.nakarm(100);
+        tama.statystyki();
+        tama.nakarm(100);
+        tama.statystyki();
+        tama.nakarm(100);
+        tama.statystyki();
+        tama.nakarm(100);
         tama.statystyki();
     }
 
