@@ -8,9 +8,11 @@ public class gra {
         int zmeczenie;
         int czystosc;
         int najedzenie;
+        boolean uciekl;
 
         String imie;
         public Ludek(String imie){
+            uciekl = false;
             zdrowie = 100;
             szczescie = 100;
             zmeczenie = 100;
@@ -62,6 +64,10 @@ public class gra {
                 this.szczescie = 100;
                 setZmeczenie(10);
                 setZdrowie(5);
+            }
+            if(this.szczescie <= 100){
+                this.szczescie = 0;
+                uciekl = true;
             }
         }
 
