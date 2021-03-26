@@ -15,22 +15,36 @@ public class Palindrom1e2 {
         return false;
     }
 
-
-
-    public static void main(String[] args){
-
-        String s = "kajak";
+    static boolean czyPalindrom1(String s){
         String x = "";
         for (int i = 0; i < s.length(); i++){
-           x = x + s.charAt(s.length() - i - 1);
+            x = x + s.charAt(s.length() - i - 1);
         }
-        System.out.println(x);
         if(s.equals(x)){
+            return true;
+        }
+        return false;
+    }
+
+    static boolean czyPalindrom2(String s){
+        for(int i = 0; i < s.length()/2; i++){
+            if(s.charAt(i) != s.charAt(s.length()-1 - i)){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args){
+
+        if(czyPalindrom1("kajak"))
             System.out.println("tak");
-        }
-        else{
+        else
             System.out.println("nie");
-        }
+        if(czyPalindrom2("kajak"))
+            System.out.println("tak");
+        else
+            System.out.println("nie");
+
 
     }
 
