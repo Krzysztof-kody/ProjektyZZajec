@@ -1,6 +1,6 @@
 package com.company;
 
-public class Palindrom {
+public class Palindrom1a1 {
 
     public static boolean czyPalindrom(String s1){
         String s2 = "";
