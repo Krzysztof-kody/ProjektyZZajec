@@ -43,6 +43,19 @@ public class gra {
             this.zdrowie += zdrowie;
             if(this.zdrowie <= 0){
                 this.zdrowie = 0;
+                setSytosc(-30);
+                setSzczescie(-30);
+                setEnergia(-30);
+                setToaleta(-30);
+            }else
+            if(this.zdrowie < 20){
+                setSytosc(-10);
+                setSzczescie(-10);
+                setEnergia(-10);
+                setToaleta(-10);
+            }
+            if(this.zdrowie > 100){
+                this.zdrowie = 100;
             }
         }
 
@@ -57,6 +70,10 @@ public class gra {
                 System.out.println(imie + " jest wyczerpany(a)");
                 setZdrowie(-20);
             }
+            if(this.energia > 100){
+                this.energia = 100;
+                setZdrowie(10);
+            }
         }
 
         public int getSzczescie() {
@@ -67,8 +84,15 @@ public class gra {
             this.szczescie += szczescie;
             if(this.szczescie <= 0){
                 this.szczescie = 0;
-                setZdrowie(-40);
-                setEnergia(-40);
+                if(this.zdrowie > 0)
+                    setZdrowie(-40);
+                if(this.energia > 0)
+                    setEnergia(-40);
+            }
+            if(this.szczescie > 100){
+                this.szczescie = 100;
+                setEnergia(10);
+                setZdrowie(10);
             }
         }
 
@@ -78,6 +102,21 @@ public class gra {
 
         public void setSytosc(int sytosc) {
             this.sytosc += sytosc;
+            if(this.sytosc <= 0){
+                this.sytosc = 0;
+                System.out.println("Twój stworek głoduje!!!");
+                setZdrowie(-20);
+                setSzczescie(-20);
+                setEnergia(-20);
+            }
+            if(this.sytosc > 100 ){
+                this.sytosc = 100;
+                System.out.println("Uważaj, " + imie + " jest przekarmiony/na");
+                setZdrowie(-10);
+                setToaleta(-50);
+            }
+
+
         }
 
         public int getToaleta() {
@@ -103,15 +142,7 @@ public class gra {
 
         }
 
-        public void nakarm(int kcal){
-            sytosc += kcal;
-            if(sytosc > 100){
-                sytosc = 100;
-                System.out.println("Uważaj, " + imie + " jest przekarmiony/na");
-                zdrowie -=10;
-                setToaleta(-50);
-            }
-        }
+
 
     }
 
@@ -120,14 +151,14 @@ public class gra {
         Stworek tama = new Stworek("Stefan");
         tama.przywitajSie();
         tama.statystyki();
-        tama.nakarm(100);
+        tama.setSytosc(100);
         tama.statystyki();
-        tama.nakarm(100);
+        tama.setSytosc(100);
         tama.statystyki();
-        tama.nakarm(100);
+        tama.setSytosc(100);
         tama.statystyki();
-        tama.nakarm(100);
-        tama.statystyki();
+        tama.setSytosc(100);
+
     }
 
 }
