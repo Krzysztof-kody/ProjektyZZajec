@@ -10,6 +10,7 @@ public class gra {
         int najedzenie;
         int nastroj;
         String imie;
+        boolean gramy;
         public Stworek(String imie, String kolor){
             this.imie = imie;
             this.kolor = kolor;
@@ -18,6 +19,7 @@ public class gra {
             energia = 100;
             najedzenie = 70;
             nastroj = 100;
+            gramy = true;
         }
         public String pasek(int n){
             String p = "";
@@ -121,33 +123,22 @@ public class gra {
             }
         }
         public void podsumowanie(){
-
+            if(this.zdrowie == 0) {System.out.println("Twój stworek odszedł"); gramy = false;}
+            if(this.energia == 0) {System.out.println("Twój stworek stracił przytomnosc"); gramy = false;}
+            if(this.najedzenie == 0) {System.out.println("Twój stworek został zagłodzony"); gramy = false;}
+            if(this.nastroj == 0) {System.out.println("Twój stworek nie ma juz na nic ochoty"); gramy = false;}
         }
     }
 
     public static void main(String[] args){
         Stworek tama = new Stworek("Stefan", "różowy");
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
-        tama.setNajedzenie(100);
-        tama.statystyki();
+
+        while(tama.gramy == true){
+            tama.statystyki();
+            tama.setNajedzenie(100);
+            tama.podsumowanie();
+        }
+
     }
 
 }
