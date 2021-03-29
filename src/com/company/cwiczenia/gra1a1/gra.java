@@ -40,7 +40,10 @@ public class gra {
         }
 
         public void setZdrowie(int zdrowie) {
-            this.zdrowie = zdrowie;
+            this.zdrowie += zdrowie;
+            if(this.zdrowie <= 0){
+                this.zdrowie = 0;
+            }
         }
 
         public int getEnergia() {
@@ -49,6 +52,11 @@ public class gra {
 
         public void setEnergia(int energia) {
             this.energia = energia;
+            if(this.energia <= 0){
+                this.energia = 0;
+                System.out.println(imie + " jest wyczerpany(a)");
+                setZdrowie(-20);
+            }
         }
 
         public int getSzczescie() {
@@ -56,7 +64,12 @@ public class gra {
         }
 
         public void setSzczescie(int szczescie) {
-            this.szczescie = szczescie;
+            this.szczescie += szczescie;
+            if(this.szczescie <= 0){
+                this.szczescie = 0;
+                setZdrowie(-40);
+                setEnergia(-40);
+            }
         }
 
         public int getSytosc() {
@@ -75,8 +88,8 @@ public class gra {
             this.toaleta += toaleta;
             if(this.toaleta <= 0){
                 System.out.println("Twój stworek zrobił w spodnie");
-                zdrowie -= 20;
-                szczescie -= 70;
+                setZdrowie(-20);
+                setSzczescie(-70);
                 this.toaleta = 100;
             }
         }
