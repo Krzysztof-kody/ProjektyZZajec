@@ -41,17 +41,112 @@ public class gra {
             System.out.println("Sytosc  " + pasek(najedzenie));
             System.out.println("Nastrój " + pasek(nastroj));
         }
-        public void jedz(int jedzenie){
-            najedzenie += jedzenie;
-            if(najedzenie >100)
-                    najedzenie = 100;
+
+
+        public int getZdrowie() {
+            return zdrowie;
+        }
+
+        public void setZdrowie(int zdrowie) {
+            if(this.zdrowie > 0) {
+                this.zdrowie += zdrowie;
+                if (this.zdrowie > 100) {
+                    this.zdrowie = 100;
+                    setNastroj(+10);
+                }
+                if (this.zdrowie < 0) {
+                    this.zdrowie = 0;
+                    setEnergia(-20);
+                    setNastroj(-20);
+                }
+            }
+        }
+
+        public int getEnergia() {
+            return energia;
+        }
+
+        public void setEnergia(int energia) {
+            if(this.energia > 0){
+                this.energia += energia;
+                if(this.energia > 100){
+                    this.energia = 100;
+                    setZdrowie(+10);
+                }
+                if(this.energia < 0){
+                    this.energia = 0;
+                    setZdrowie(-20);
+                    setNastroj(-20);
+                }
+            }
+        }
+
+        public int getNajedzenie() {
+            return najedzenie;
+        }
+
+        public void setNajedzenie(int najedzenie) {
+            if(this.najedzenie > 0) {
+                this.najedzenie += najedzenie;
+                if (this.najedzenie > 100) {
+                    this.najedzenie = 100;
+                    System.out.println("PRZEJEDZENIE!!!");
+                    setNastroj(-20);
+                    setEnergia(-20);
+                }
+                if (this.najedzenie < 0) {
+                    this.najedzenie = 0;
+                    setNastroj(-20);
+                    setEnergia(-20);
+                    setZdrowie(-20);
+                }
+            }
+        }
+
+        public int getNastroj() {
+            return nastroj;
+        }
+
+        public void setNastroj(int nastroj) {
+            if(this.nastroj > 0) {
+                this.nastroj += nastroj;
+                if (this.nastroj > 100) {
+                    this.nastroj = 100;
+                }
+                if (this.nastroj < 0) {
+                    this.nastroj = 0;
+                    setZdrowie(-20);
+                    setEnergia(-20);
+                }
+            }
+        }
+        public void podsumowanie(){
+
         }
     }
 
     public static void main(String[] args){
         Stworek tama = new Stworek("Stefan", "różowy");
         tama.statystyki();
-        tama.jedz(100);
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
+        tama.statystyki();
+        tama.setNajedzenie(100);
         tama.statystyki();
     }
 
