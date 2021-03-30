@@ -40,7 +40,8 @@ public class gra {
         }
 
         public void setZdrowie(int zdrowie) {
-            this.zdrowie += zdrowie;
+            if (this.zdrowie > 0){
+                this.zdrowie += zdrowie;
             if(this.zdrowie <= 0){
                 this.zdrowie = 0;
                 setSytosc(-30);
@@ -53,7 +54,7 @@ public class gra {
                 setSzczescie(-10);
                 setEnergia(-10);
                 setToaleta(-10);
-            }
+            }}
             if(this.zdrowie > 100){
                 this.zdrowie = 100;
             }
@@ -64,12 +65,13 @@ public class gra {
         }
 
         public void setEnergia(int energia) {
+            if(this.energia > 0){
             this.energia = energia;
             if(this.energia <= 0){
                 this.energia = 0;
                 System.out.println(imie + " jest wyczerpany(a)");
                 setZdrowie(-20);
-            }
+            }}
             if(this.energia > 100){
                 this.energia = 100;
                 setZdrowie(10);
@@ -81,6 +83,7 @@ public class gra {
         }
 
         public void setSzczescie(int szczescie) {
+            if(this.szczescie > 0){
             this.szczescie += szczescie;
             if(this.szczescie <= 0){
                 this.szczescie = 0;
@@ -88,7 +91,7 @@ public class gra {
                     setZdrowie(-40);
                 if(this.energia > 0)
                     setEnergia(-40);
-            }
+            }}
             if(this.szczescie > 100){
                 this.szczescie = 100;
                 setEnergia(10);
@@ -101,6 +104,7 @@ public class gra {
         }
 
         public void setSytosc(int sytosc) {
+            if(this.sytosc > 0){
             this.sytosc += sytosc;
             if(this.sytosc <= 0){
                 this.sytosc = 0;
@@ -108,7 +112,7 @@ public class gra {
                 setZdrowie(-20);
                 setSzczescie(-20);
                 setEnergia(-20);
-            }
+            }}
             if(this.sytosc > 100 ){
                 this.sytosc = 100;
                 System.out.println("Uważaj, " + imie + " jest przekarmiony/na");
@@ -124,13 +128,14 @@ public class gra {
         }
 
         public void setToaleta(int toaleta) {
-            this.toaleta += toaleta;
+            if(this.toaleta > 0){
+                this.toaleta += toaleta;
             if(this.toaleta <= 0){
                 System.out.println("Twój stworek zrobił w spodnie");
                 setZdrowie(-20);
                 setSzczescie(-70);
                 this.toaleta = 100;
-            }
+            }}
         }
 
         public void statystyki(){

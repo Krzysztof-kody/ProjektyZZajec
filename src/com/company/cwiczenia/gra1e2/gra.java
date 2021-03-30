@@ -52,6 +52,13 @@ public class gra {
 
         public void setZdrowie(int zdrowie) {
             this.zdrowie += zdrowie;
+            if(this.zdrowie > 100){
+                this.zdrowie = 100;
+            }
+            if(this.zdrowie < 0){
+                this.zdrowie = 0;
+                this.uciekl = true;
+            }
         }
 
         public int getSzczescie() {
@@ -65,7 +72,7 @@ public class gra {
                 setZmeczenie(10);
                 setZdrowie(5);
             }
-            if(this.szczescie <= 100){
+            if(this.szczescie <= 0){
                 this.szczescie = 0;
                 uciekl = true;
             }
@@ -83,6 +90,11 @@ public class gra {
                 setZdrowie(-20);
                 setCzystosc(-10);
             }
+            if(this.zmeczenie < 0){
+                this.zmeczenie = 0;
+                setSzczescie(10);
+                setZdrowie(10);
+            }
         }
 
         public int getCzystosc() {
@@ -91,6 +103,14 @@ public class gra {
 
         public void setCzystosc(int czystosc) {
             this.czystosc += czystosc;
+            if(this.czystosc > 100){
+                this.czystosc = 100;
+            }
+            if(this.czystosc < 0) {
+                this.czystosc = 0;
+                setZdrowie(-10);
+                setSzczescie(-10);
+            }
         }
 
         public int getNajedzenie() {
@@ -107,17 +127,40 @@ public class gra {
                 setCzystosc(-10);
                 setSzczescie(10);
             }
+            if(this.najedzenie < 0){
+                this.najedzenie = 0;
+                setZdrowie(-10);
+                setSzczescie(-10);
+                setZmeczenie(-10);
+            }
+        }
+        public void stan(){
+            if(this.zdrowie == 0){
+                uciekl = true;
+                System.out.println("Twoj stworek podupadł na zdrowiu i odszedł");
+            }
+            if(this.szczescie == 0){
+                uciekl = true;
+                System.out.println("Twoj stworek był zbyt przygnębiony i uciekł");
+            }
+            if(this.zmeczenie == 0){
+                System.out.println("Twoj stworek stracił przytomność");
+            }
+            if(this.czystosc == 0){
+                System.out.println("Żyje w brudzie!");
+            }
+            if(this.najedzenie == 0){
+                System.out.println("Twoj stworek głoduje");
+            }
+
         }
     }
     public static void main(String[] args){
         Ludek lu = new Ludek("Czarek");
-        lu.statystyki();
-        lu.setNajedzenie(20);
-        lu.statystyki();
-        lu.setNajedzenie(20);
-        lu.statystyki();
-        lu.setNajedzenie(20);
-        lu.statystyki();
-
+        while(lu.uciekl==false){
+            lu.statystyki();
+            lu.setNajedzenie(20);
+            lu.stan();
+        }
     }
 }
