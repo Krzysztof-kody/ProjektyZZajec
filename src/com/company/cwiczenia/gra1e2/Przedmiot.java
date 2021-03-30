@@ -9,14 +9,14 @@ public class Przedmiot {
     String nazwa;
     int cena;
 
-    public Przedmiot(String nazwa, int zd, int sz, int zm, int cz, int naj){
+    public Przedmiot(String nazwa, int zd, int sz, int zm, int cz, int naj, int cena){
         this.nazwa = nazwa;
         zdrowie = zd;
         szczescie = sz;
         zmeczenie = zm;
         czystosc = cz;
         najedzenie = naj;
-
+        this.cena = cena;
     }
 
 

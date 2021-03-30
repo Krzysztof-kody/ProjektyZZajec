@@ -162,5 +162,6 @@ public class gra {
             lu.setNajedzenie(20);
             lu.stan();
         }
+        Przedmiot apteczka = new Przedmiot("apteczka", 40, 0,0,0,0, 10);
     }
 }
