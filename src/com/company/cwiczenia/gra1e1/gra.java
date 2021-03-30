@@ -10,6 +10,7 @@ public class gra {
         st.statystyki();
         ArrayList<Przedmiot> apteczki = new ArrayList<>();
         apteczki.add(new Przedmiot("apteczka",50,0,0,0));
+        Przedmiot pilka = new Przedmiot("pilka", 0,0,0,30);
 
         while(st.zywy) {
             if(st.getZdrowie() < 50){
@@ -17,8 +18,12 @@ public class gra {
                     apteczki.get(0).uzyj(st);
                     apteczki.remove(0);
                 }
+            }else
+            if(st.getZabawa() < 50){
+                    pilka.uzyj(st);
             }
-            st.setSytosc(30);
+            else
+                st.setSytosc(30);
             st.statystyki();
             System.out.println("---------");
         }
