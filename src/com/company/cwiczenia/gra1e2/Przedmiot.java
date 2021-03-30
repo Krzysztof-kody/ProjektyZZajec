@@ -16,7 +16,7 @@ public class Przedmiot {
         zmeczenie = zm;
         czystosc = cz;
         najedzenie = naj;
-        ilosc = ilosc + 1;
+
     }
 
 
