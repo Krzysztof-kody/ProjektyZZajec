@@ -1,5 +1,7 @@
 package com.company.cwiczenia;
 
+import java.util.Arrays;
+
 public class Anagramy1a2 {
 
     static boolean czyAnagramy(String s1, String s2){
@@ -20,16 +22,35 @@ public class Anagramy1a2 {
         }
         return true;
     }
+/*
+    ababa
+    babaa
+
+    aaabb
+    aaabb
+
+
+ */
+
 
     public static void main(String[] args){
         String s1 = "aaasxsxsddd";
-        String s2 = "xxsaaassdcdd";
+        String s2 = "xxsaaassddd";
 
-        if(czyAnagramy(s1,s2)){
-            System.out.println("to anagramy");
-        }
-        else
-            System.out.println("to nie są anagramy");
+        char[] slowo1 = s1.toCharArray();
+        char[] slowo2 = s2.toCharArray();
+        Arrays.sort(slowo1);
+        Arrays.sort(slowo2);
+
+        String w1 = new String(slowo1);
+        String w2 = new String(slowo2);
+
+        System.out.println(w1);
+        System.out.println(w2);
+
+        if(w1.equals(w2)){
+            System.out.println("ok");
+        }else System.out.println("ee");
 
     }
 }
