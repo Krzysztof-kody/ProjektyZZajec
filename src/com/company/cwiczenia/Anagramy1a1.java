@@ -5,9 +5,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Anagramy1a1 {
+    /*
+        a   b   c   d   e
+        97  98  99  100 101
+
+        0 1 2 3 4
+
+        'c' - 'a' -> 99 - 97 = 2
+
+     */
+
+
     public static boolean anagramy(String s1, String s2){
-        ArrayList<Integer> litery1 = new ArrayList<>(26);
-        ArrayList<Integer> litery2 = new ArrayList<>(26);
+        int[] ss1 = new int[26];
+
+        ArrayList<Integer> litery1 = new ArrayList<>();
+        ArrayList<Integer> litery2 = new ArrayList<>();
         for (int i = 0; i < 26; i++) {
             litery1.add(0);
             litery2.add(0);
