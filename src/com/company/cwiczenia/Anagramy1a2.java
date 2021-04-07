@@ -22,7 +22,9 @@ public class Anagramy1a2 {
         }
         return true;
     }
-/*
+
+
+    /*
     ababa
     babaa
 
