@@ -18,6 +18,13 @@ public class Przedmiot {
         najedzenie = naj;
         this.cena = cena;
     }
+    public void uzyj (Ludek L){
+        L.setCzystosc(czystosc);
+        L.setNajedzenie(najedzenie);
+        L.setSzczescie(szczescie);
+        L.setZmeczenie(zmeczenie);
+        L.setZdrowie(zdrowie);
+    }
 
 
 }
