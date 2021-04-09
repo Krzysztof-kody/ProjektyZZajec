@@ -1,4 +1,4 @@
-package com.company;
+package com.company.cwiczenia;
 
 public class Anagramy1e2 {
 
