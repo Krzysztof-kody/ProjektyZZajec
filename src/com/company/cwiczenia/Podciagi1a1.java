@@ -22,6 +22,8 @@ public class Podciagi1a1 {
             }
         }
         System.out.println(dlMax + ", " + posMax);
-
+        for(int i = posMax; i < posMax+dlMax; i++){
+            System.out.print(ciag.charAt(i));
+        }
     }
 }
