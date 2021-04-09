@@ -23,36 +23,22 @@ public class Anagramy1a2 {
         return true;
     }
 
-
-    /*
-    ababa
-    babaa
-
-    aaabb
-    aaabb
-
-
- */
-
-
-    public static void main(String[] args){
-        String s1 = "aaasxsxsddd";
-        String s2 = "xxsaaassddd";
-
+    static boolean czyAnagramy2(String s1, String s2) {
         char[] slowo1 = s1.toCharArray();
         char[] slowo2 = s2.toCharArray();
         Arrays.sort(slowo1);
         Arrays.sort(slowo2);
-
         String w1 = new String(slowo1);
         String w2 = new String(slowo2);
+        return w1.equals(w2);
+        }
 
-        System.out.println(w1);
-        System.out.println(w2);
 
-        if(w1.equals(w2)){
+        public static void main(String[] args){
+        String s1 = "aaasxsxsddd";
+        String s2 = "xssaaassddd";
+        if(czyAnagramy2(s1,s2)){
             System.out.println("ok");
         }else System.out.println("ee");
-
     }
 }
