@@ -31,9 +31,6 @@ public class Podciagi1a2 {
         for(int i = posMax-dlMax; i< posMax; i++){
             System.out.print(s.charAt(i));
 
-
-
-
 /*        for(int i = 1; i < s.length(); i++){
             if(s.charAt(i) == s.charAt(i-1)){
                 dl++;
