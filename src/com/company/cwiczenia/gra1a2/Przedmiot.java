@@ -6,13 +6,14 @@ public class Przedmiot {
     int najedzenie;
     int nastroj;
     String nazwa;
-
-    public Przedmiot(String nazwa, int zd, int en, int naj,int nas){
+    int cena;
+    public Przedmiot(String nazwa, int zd, int en, int naj,int nas, int cena){
         this.nazwa = nazwa;
         zdrowie = zd;
         energia = en;
         najedzenie = naj;
         nastroj = nas;
+        this.cena = cena;
     }
     public void uzyj(Stworek S){
         System.out.println("Uzyto " + nazwa +" na " + S.imie);
