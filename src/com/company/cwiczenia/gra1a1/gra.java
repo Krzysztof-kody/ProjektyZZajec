@@ -1,6 +1,7 @@
 package com.company.cwiczenia.gra1a1;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class gra {
 
@@ -8,22 +9,38 @@ public class gra {
     public static void main(String[] args){
 
         Stworek tama = new Stworek("Stefan");
-        ArrayList<Przedmiot> apteczki = new ArrayList<>();
 
-        apteczki.add(new Przedmiot("apteczka", 50, 0,0,0,0));
+        int wybor = 0;
+        Scanner sc = new Scanner(System.in);
+        int kasa = 60;
 
+        Przedmiot apteczka = new Przedmiot("apteczka", 50, 0,0,0,0, 50);
+        Przedmiot marchew = new Przedmiot("marchew", 5, 5,0,15,-5, 10);
+        Przedmiot nocnik = new Przedmiot("nocnik", 0,0,0,0,100,20);
         tama.przywitajSie();
 
         while(tama.gramy) {
             tama.statystyki();
-            tama.setSytosc(100);
-            tama.stan();
-            if(tama.zdrowie < 60){
-                if(apteczki.size()>0){
-                    apteczki.get(0).uzyj(tama);
-                    apteczki.remove(0);
-                }
+            System.out.println("1. apteczka");
+            System.out.println("2. marchew");
+            wybor = sc.nextInt();
+            switch (wybor){
+                case 1:
+                    if(kasa >= apteczka.cena){
+                        apteczka.uzyj(tama);
+                        kasa -= apteczka.cena;
+                    }else
+                        System.out.println("Nie masz wystarczających środków");
+                    break;
+                case 2:
+                    if(kasa >= marchew.cena){
+                        marchew.uzyj(tama);
+                        kasa -= marchew.cena;
+                    }else
+                        System.out.println("Nie masz wystarczających środków");
+                    break;
             }
+            tama.stan();
         }
 
     }
