@@ -43,7 +43,5 @@ public class gra {
             }
             tama.podsumowanie();
         }
-
     }
-
 }
