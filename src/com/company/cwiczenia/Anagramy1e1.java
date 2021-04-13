@@ -20,27 +20,26 @@ public class Anagramy1e1 {
         return true;
     }
 
-    public static void main(String[] args){
-
-        String s = "aabbccddaaa";
-        String s2 ="aaaaaccddbb";
-
+    static boolean czyAnagramy2(String s, String s2){
         char[] sCh = s.toCharArray();
         char[] s2Ch = s2.toCharArray();
-
         Arrays.sort(sCh);
         Arrays.sort(s2Ch);
-
         String sW = new String(sCh);
         String s2W = new String(s2Ch);
+        return sW.equals(s2W);
+    }
 
+    public static void main(String[] args){
+
+        String s = "aacbccddaaa";
+        String s2 ="aaaaaccddbb";
 
         //if(czyAnagramy(s,s2)){
-        if(sW.equals(s2W)){
+        if(czyAnagramy2(s,s2)){
             System.out.println("to sa anagramy");
         }
         else
             System.out.println("to nie są anagramy");
-
     }
 }
