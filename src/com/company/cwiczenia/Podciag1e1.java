@@ -2,8 +2,11 @@ package com.company.cwiczenia;
 
 public class Podciag1e1 {
 
+    static void podciag(String s){
+
+    }
     public static void main(String[] args){
-        String s = "rmbcjjjjsadjakhsdkaaaaax";
+        String s = "1234111112223333";
         int j = 0;
         int dl = 1;
         int dlMax = 0;
@@ -11,7 +14,7 @@ public class Podciag1e1 {
        //  1 1 1 1 4 1 1 1 1 1 1 1 1 1 1 5 1
 
         for(int i = 0; i < s.length()-1; i++){
-            if(s.charAt(i) == s.charAt(i+1)){
+            if(s.charAt(i) <= s.charAt(i+1)){
                 dl++;
             }
             else {
