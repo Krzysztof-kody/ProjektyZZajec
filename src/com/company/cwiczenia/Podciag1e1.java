@@ -31,8 +31,8 @@ public class Podciag1e1 {
             posMax = j;
         }
         System.out.println("Max: " + posMax+ ":"+ dlMax);
-        for(){
-
+        for(int i = posMax; i< posMax + dlMax; i++){
+            System.out.print(s.charAt(i));
         }
     }
 }
