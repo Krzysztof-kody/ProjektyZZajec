@@ -11,7 +11,7 @@ public class Stworek{
     public Stworek(String imie){
         this.imie = imie;
         zdrowie = 100;
-        energia = 50;
+        energia = 100;
         szczescie = 100;
         sytosc = 100;
         toaleta = 100;
@@ -65,7 +65,7 @@ public class Stworek{
 
     public void setEnergia(int energia) {
         if(this.energia > 0){
-            this.energia = energia;
+            this.energia += energia;
             if(this.energia <= 0){
                 this.energia = 0;
                 System.out.println(imie + " jest wyczerpany(a)");

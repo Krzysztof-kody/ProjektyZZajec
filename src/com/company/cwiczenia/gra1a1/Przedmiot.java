@@ -8,6 +8,7 @@ public class Przedmiot {
     int toaleta;
     String nazwa;
     int cena;
+    int ilosc;
     public Przedmiot(String nazwa, int zdr, int ene, int sz, int sy, int toa, int cena){
         this.nazwa = nazwa;
         zdrowie = zdr;
@@ -16,6 +17,7 @@ public class Przedmiot {
         sytosc = sy;
         toaleta = toa;
         this.cena = cena;
+        ilosc = 0;
     }
     public void uzyj(Stworek S){
         System.out.println(S.imie + " + " + nazwa);

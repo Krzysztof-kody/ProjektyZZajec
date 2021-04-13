@@ -101,7 +101,7 @@ public class Stworek {
             if(zywy) {
             this.zabawa += zabawa;
             if(this.zabawa > 100){
-                this.zabawa = 0;
+                this.zabawa = 100;
             }
             if(this.zabawa <= 0){
                 this.zabawa = 0;
