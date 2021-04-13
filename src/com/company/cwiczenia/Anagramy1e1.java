@@ -31,10 +31,8 @@ public class Anagramy1e1 {
     }
 
     public static void main(String[] args){
-
         String s = "aacbccddaaa";
         String s2 ="aaaaaccddbb";
-
         //if(czyAnagramy(s,s2)){
         if(czyAnagramy2(s,s2)){
             System.out.println("to sa anagramy");
