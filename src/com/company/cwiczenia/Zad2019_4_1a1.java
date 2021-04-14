@@ -1,6 +1,11 @@
 package com.company.cwiczenia;
+/*
 
-public class Zad20204_1a1 {
+https://classroom.google.com/u/1/c/MTU2ODA3MzkwNDAy
+Matura 2019
+
+ */
+public class Zad2019_4_1a1 {
 
     public static void main(String[] args){
         int a = 81;
