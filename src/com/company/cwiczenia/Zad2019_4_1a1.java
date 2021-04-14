@@ -8,17 +8,24 @@ zadanie 4
  */
 public class Zad2019_4_1a1 {
 
-    public static void main(String[] args){
-        int a = 81;
-        int licznik = 0;
+    static boolean czyPotega3(int a){
         while(a > 1) {
             if(a % 3 != 0)
                 a = 0;
             a /= 3;
         }
-        if(a == 1)
-            licznik++;
+        return a==0?false:true;
+    }
 
-        System.out.println(licznik);
+    public static void main(String[] args){
+
+
+
+        if(czyPotega3(81) == true){
+            System.out.println("tak");
+        }
+        else
+            System.out.println("nie");
+
     }
 }
