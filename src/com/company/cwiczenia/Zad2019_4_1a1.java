@@ -38,6 +38,17 @@ public class Zad2019_4_1a1 {
         if(n == 0) return 1;
         return silnia(n-1)*n;
     }
+
+    static int NWD(int a, int b){
+
+        while(b > 0) {
+            int r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
@@ -48,7 +59,6 @@ public class Zad2019_4_1a1 {
             }
         }
         System.out.println(licznik);
-
         in.close();
         in = new Scanner(plik);
         for(int i = 0 ; i < 500; i++) {
@@ -57,7 +67,6 @@ public class Zad2019_4_1a1 {
             int liczba = in.nextInt();
             boolean pisz = false;
             liczba2array(liczba, b);
-
             for (int l : b) {
                 if ((l > 0) && (pisz == false)) pisz = true;
                 if (pisz) {
@@ -67,5 +76,6 @@ public class Zad2019_4_1a1 {
             if(suma == liczba)
                 System.out.println(liczba + ", " + suma + " : " + (suma == liczba));
         }
+        System.out.println(NWD(NWD(NWD(24,12), 6),3));
     }
 }
