@@ -21,14 +21,23 @@ public class Zad2019_4_1a1 {
         }
         return a==0?false:true;
     }
-
+/*
+    1234 %10 /10
+          4    123
+          3    12
+          2    1
+          1    0
+ */
     static void liczba2array(int n, int[] b){
-        for(int i = 0; i < 6; i++){
+        for(int i = 5; i >= 0; i--){
             b[i] = n % 10;
             n /= 10;
         }
     }
-
+    static int silnia(int n){
+        if(n == 0) return 1;
+        return silnia(n-1)*n;
+    }
     public static void main(String[] args) throws FileNotFoundException {
         File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
@@ -40,11 +49,23 @@ public class Zad2019_4_1a1 {
         }
         System.out.println(licznik);
 
-        int[] b = new int[6];
-        liczba2array(1234, b);
-        for(int l: b){
-            System.out.println(l);
-        }
+        in.close();
+        in = new Scanner(plik);
+        for(int i = 0 ; i < 500; i++) {
+            int[] b = new int[6];
+            int suma = 0;
+            int liczba = in.nextInt();
+            boolean pisz = false;
+            liczba2array(liczba, b);
 
+            for (int l : b) {
+                if ((l > 0) && (pisz == false)) pisz = true;
+                if (pisz) {
+                    suma += silnia(l);
+                }
+            }
+            if(suma == liczba)
+                System.out.println(liczba + ", " + suma + " : " + (suma == liczba));
+        }
     }
 }
