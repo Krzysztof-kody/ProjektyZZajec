@@ -23,4 +23,6 @@ public class Panel extends JPanel {
         g.drawLine(320-10,20,320,0);
         g.drawLine(320+10,20,320,0);
     }
+// strzałka X
+
 }
