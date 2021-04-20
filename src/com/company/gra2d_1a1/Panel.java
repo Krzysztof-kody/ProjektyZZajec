@@ -13,6 +13,16 @@ public class Panel extends JPanel {
         g.setColor(Color.gray);
         for(int i = 0; i < 32; i++)
             g.drawLine(i*20,0,i*20,479);
+        for(int i = 0; i < 24; i++)
+            g.drawLine(0,i*20,639,i*20);
+
+        g.setColor(Color.red);
+        g.drawLine(320,0,320,479);
+        g.drawLine(321,0,321,479);
+
+        g.drawLine(320-10,20,320,0);
+
+
 
     }
 }
