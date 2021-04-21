@@ -80,6 +80,25 @@ public class Zad2019_4_1e1 {
         }
     }
 
+    static int NWD(int a, int b){
+        while(a!=b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
+    }
+
+    static int NWD1(int a, int b){
+       if( a % b != 0) return NWD1(b, a % b);
+        else return b;
+    }
+    static int NWD2(int a, int b){
+        return a%b!=0?NWD2(b, a % b):b;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
        //zad41a();
        //zad41b();
@@ -88,14 +107,7 @@ public class Zad2019_4_1e1 {
         int a = 108;
         int b = 72;
 
-        while(a!=b) {
-            if (a > b) {
-                a = a - b;
-            } else {
-                b = b - a;
-            }
-        }
-        System.out.println(a);
+        System.out.println(NWD2(a,b));
 
     }
 }

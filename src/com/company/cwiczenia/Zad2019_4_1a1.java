@@ -48,6 +48,21 @@ public class Zad2019_4_1a1 {
         }
         return a;
     }
+/*
+        b > 0
+            a = b, b = a % b
+
+        f(a, b) =   b > 0; f(b, a % b)
+                    b == 0; a
+ */
+    static int NWDr(int a, int b){
+        if(b == 0) return a;
+        return NWDr(b, a % b);
+    }
+
+    static int NWDrr(int a, int b){
+        return b==0?a:NWDrr(b, a % b);
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
         File plik = new File("src/com/company/cwiczenia/liczby.txt");
@@ -76,6 +91,7 @@ public class Zad2019_4_1a1 {
             if(suma == liczba)
                 System.out.println(liczba + ", " + suma + " : " + (suma == liczba));
         }
+
         System.out.println(NWD(NWD(NWD(24,12), 6),3));
     }
 }

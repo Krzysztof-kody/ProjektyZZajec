@@ -34,14 +34,61 @@ public class Zad2019_4_1a2 {
         return i;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        File plik = new File("src/com/company/cwiczenia/liczby.txt");
+    static int NWD1(int a, int b){
+        while(a!=b){
+            if(a > b)
+                a -= b;
+            else
+                b -= a;
+        }
+        return a;
+    }
+    static int NWD2(int a, int b) {
+        int r;
+        while(b > 0) {
+            r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
+    }
+
+    static int NWD3(int a, int b){
+        if(b > 0) return NWD3(b, a%b);
+        return a;
+    }
+    static int NWD3b(int a, int b){
+        return b == 0?a:NWD3(b, a%b);
+    }
+
+
+        public static void main(String[] args) throws FileNotFoundException {
+     /*   File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
         int licznik = 0;
         for(int i=0; i< 500; i++) {
             if (czyPotegaTrojki(in.nextInt()))
                 licznik++;
         }
+        /*
+
+            15 45
+            3   33
+            5   5
+        3 5 -> 15
+
+        2 20 10 15 25
+        2 22 2  3
+          5  5  5  55
+
+         ----------
+
+
+
+         */
+
+
+/*
        // System.out.println(licznik);
         in.close();
         in = new Scanner(plik);
@@ -56,5 +103,7 @@ public class Zad2019_4_1a2 {
             if(liczba == suma)
                 System.out.println(liczba + ", " + suma + " : " + (liczba == suma));
         }
+*/
+        System.out.println(NWD3b(24,36));
     }
 }

@@ -24,7 +24,7 @@ public class Gra extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 /* włączenie antyaliasingu
-b
+
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING,
                                             RenderingHints.VALUE_ANTIALIAS_ON);
         rh.put(RenderingHints.KEY_RENDERING,RenderingHints.VALUE_RENDER_QUALITY);
