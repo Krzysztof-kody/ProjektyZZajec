@@ -9,7 +9,7 @@ public class Panel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        ImageIcon obr = new ImageIcon("src/com/company/gra2D/PNG/background/10.png");
+        ImageIcon obr = new ImageIcon("src/com/company/gra2D/PNG/noBackground/6.png");
         System.out.println(g.getClipBounds().width + " " + g.getClipBounds().height);
         // 299 x 299
         g.setColor(Color.blue);
@@ -26,6 +26,10 @@ public class Panel extends JPanel {
         g.drawLine(321,0,321,479);
 
         g.drawLine(320-10,20,320,0);
-        g.drawImage(obr.getImage(),0,0, null);
+       // g.drawImage(obr.getImage(),0,0, null);
+        for(int i = 0; i <  10; i++) {
+            g.drawImage(obr.getImage(), i*40, 0, 40, 40, null);
+        }
+
     }
 }
