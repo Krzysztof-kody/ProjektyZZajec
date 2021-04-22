@@ -13,7 +13,7 @@ public class Gra2d_1e2 {
         /*
         game.setSize(640, 480);
         game.setLocationRelativeTo(null);
-        */
+*/
         game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
