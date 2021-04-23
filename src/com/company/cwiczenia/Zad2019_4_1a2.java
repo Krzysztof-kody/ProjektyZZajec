@@ -61,34 +61,15 @@ public class Zad2019_4_1a2 {
         return b == 0?a:NWD3(b, a%b);
     }
 
-
-        public static void main(String[] args) throws FileNotFoundException {
-     /*   File plik = new File("src/com/company/cwiczenia/liczby.txt");
+    static void zadZSilnia() throws FileNotFoundException {
+        File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
         int licznik = 0;
         for(int i=0; i< 500; i++) {
             if (czyPotegaTrojki(in.nextInt()))
                 licznik++;
         }
-        /*
 
-            15 45
-            3   33
-            5   5
-        3 5 -> 15
-
-        2 20 10 15 25
-        2 22 2  3
-          5  5  5  55
-
-         ----------
-
-
-
-         */
-
-
-/*
        // System.out.println(licznik);
         in.close();
         in = new Scanner(plik);
@@ -103,7 +84,45 @@ public class Zad2019_4_1a2 {
             if(liczba == suma)
                 System.out.println(liczba + ", " + suma + " : " + (liczba == suma));
         }
-*/
-        System.out.println(NWD3b(24,36));
+    }
+
+        public static void main(String[] args) throws FileNotFoundException {
+     /*
+     2 6 3 9
+     */
+            File plik = new File("src/com/company/cwiczenia/liczby.txt");
+            Scanner in = new Scanner(plik);
+            int[] liczby = new int[500];
+            int n = 0;
+            int nwdTMP;
+            int maxA = 1;
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            while(in.hasNext()){
+                liczby[n] = in.nextInt();
+                n++;
+            }
+            int j = 0;
+            for(int i = 0; i < 500-1; i++){
+                a = 0;
+                nwdTMP = NWD1(liczby[i], liczby[i+1]);
+                j = i+2;
+                if(nwdTMP > 1) {
+                    a = 2;
+                    while ((nwdTMP > 1) && (j < 500)) {
+                        nwdTMP = NWD1(nwdTMP, liczby[j]);
+                        if(nwdTMP == 1) break;
+                        j++;
+                        a++;
+                    }
+                    if (maxA < a) {
+                        maxA = a;
+                        b = i;
+                        c = j - 1;
+                    }
+                }
+            }
+            System.out.println(maxA + " " + liczby[b] + " " + liczby[c] );
     }
 }
