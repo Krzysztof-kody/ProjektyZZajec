@@ -39,6 +39,35 @@ public class Zad2019_4_1a1 {
         return silnia(n-1)*n;
     }
 
+    static void zad42() throws FileNotFoundException {
+        File plik = new File("src/com/company/cwiczenia/liczby.txt");
+        Scanner in = new Scanner(plik);
+        int licznik = 0;
+        for(int i = 0 ; i < 500; i++) {
+            if (czyPotega3(in.nextInt()) == true) {
+                licznik++;
+            }
+        }
+        System.out.println(licznik);
+        in.close();
+        in = new Scanner(plik);
+        for(int i = 0 ; i < 500; i++) {
+            int[] b = new int[6];
+            int suma = 0;
+            int liczba = in.nextInt();
+            boolean pisz = false;
+            liczba2array(liczba, b);
+            for (int l : b) {
+                if ((l > 0) && (pisz == false)) pisz = true;
+                if (pisz) {
+                    suma += silnia(l);
+                }
+            }
+            if(suma == liczba)
+                System.out.println(liczba + ", " + suma + " : " + (suma == liczba));
+        }
+    }
+
     static int NWD(int a, int b){
 
         while(b > 0) {
@@ -67,31 +96,35 @@ public class Zad2019_4_1a1 {
     public static void main(String[] args) throws FileNotFoundException {
         File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
-        int licznik = 0;
-        for(int i = 0 ; i < 500; i++) {
-            if (czyPotega3(in.nextInt()) == true) {
-                licznik++;
-            }
+        int[] liczby = new int[500];
+        int l = 0;
+        while(in.hasNext()) {
+            liczby[l] = in.nextInt();
+            l++;
         }
-        System.out.println(licznik);
-        in.close();
-        in = new Scanner(plik);
-        for(int i = 0 ; i < 500; i++) {
-            int[] b = new int[6];
-            int suma = 0;
-            int liczba = in.nextInt();
-            boolean pisz = false;
-            liczba2array(liczba, b);
-            for (int l : b) {
-                if ((l > 0) && (pisz == false)) pisz = true;
-                if (pisz) {
-                    suma += silnia(l);
+        int dl = 0;
+        int dlMax = 0;
+        int p = 0,k = 0;
+        for(int i = 0; i < l-1; i++){
+            dl = 0;
+            int nwd = NWD(liczby[i],liczby[i+1]);
+            if(nwd > 1){
+                dl = 2;
+                for(int j = i+2; j < l; j++){
+                    nwd = NWD(nwd, liczby[j]);
+                    if(nwd == 1){
+                        break;}
+                    dl++;
                 }
+            if(dlMax < dl) {
+                dlMax = dl;
+                p = i;
+                k = i + dl - 1;
             }
-            if(suma == liczba)
-                System.out.println(liczba + ", " + suma + " : " + (suma == liczba));
-        }
-
-        System.out.println(NWD(NWD(NWD(24,12), 6),3));
+        }}
+        System.out.println(dlMax + " " + p + " " + k);
+        System.out.println(liczby[p] + " " + liczby[k]);
+        System.out.println(NWD(liczby[p],liczby[k]));
+        System.out.println(NWD(liczby[p], liczby[p+1]));
     }
 }
