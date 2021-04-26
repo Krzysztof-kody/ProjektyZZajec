@@ -7,7 +7,7 @@ public class Main {
         JFrame gra = new JFrame();
         Panel p = new Panel();
         gra.add(p);
-
+        gra.setIconImage(new ImageIcon("src/com/company/gra2D/PNG/noBackground/2.png").getImage());
         gra.setTitle("Gra 2D");
         gra.setBounds(200,200,640 + 14, 480 + 14 + 23);
         /*
