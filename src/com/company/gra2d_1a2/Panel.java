@@ -11,24 +11,19 @@ public class Panel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.blue);
-        g.drawLine(0,0, 639, 479);
+
+        ImageIcon obr = new ImageIcon("src/com/company/gra2D/PNG/background/6.png");
+        g.drawImage(obr.getImage(), 40,40, null);
 
         g.setColor(Color.gray);
-        for(int i=0; i< 64; i++){
-            g.drawLine(i*10,0,i*10,479);
+        for(int i=0; i< 16; i++){
+            g.drawLine(i*40,0,i*40,479);
         }
-        for(int i=0; i< 48; i++){
-            g.drawLine(0,i*10,639,i*10);
+        for(int i=0; i< 12; i++){
+            g.drawLine(0,i*40,639,i*40);
         }
-        g.setColor(Color.red);
-        g.drawLine(320,0, 320, 479);
-        g.drawLine(319,0, 319, 479);
-        g.drawLine(321,0, 321, 479);
 
-        g.drawLine(320-20,30, 320, 0);
-
-
+        g.drawImage(obr.getImage(), 0,0,40,40, null);
 
     }
 }

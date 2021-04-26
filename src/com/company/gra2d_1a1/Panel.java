@@ -9,7 +9,7 @@ public class Panel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        ImageIcon obrazek = new ImageIcon("src/com/company/gra2D/PNG/background/17.png");
+        ImageIcon obrazek = new ImageIcon("1.png");
         ImageIcon obrazekBT = new ImageIcon("src/com/company/gra2D/PNG/noBackground/17.png");
         System.out.println(g.getClipBounds().width + " "+g.getClipBounds().height);
         g.setColor(Color.gray);
