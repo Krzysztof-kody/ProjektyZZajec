@@ -2,9 +2,15 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Panel extends JPanel {
-    public Panel(){}
+public class Panel extends JPanel implements MouseListener {
+    int liczKlikniec;
+    public Panel(){
+        addMouseListener(this);
+        liczKlikniec = 5;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -32,6 +38,39 @@ public class Panel extends JPanel {
 
         g.drawImage(obr.getImage(),20,20,50,50,null);
 
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+        System.out.println(e.getX() + " " + e.getY());
+    //20,20,50,50
+        if(e.getX()>=20 && e.getX()<=70)
+            if(e.getY()>=20 && e.getY()<=70){
+                if(liczKlikniec>0)
+                System.out.println("trafiony");
+            }
+        liczKlikniec--;
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 // strzałka X
