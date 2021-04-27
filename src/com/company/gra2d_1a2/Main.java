@@ -7,6 +7,8 @@ public class Main {
         JFrame gra = new JFrame();
         Panel p = new Panel();
         gra.add(p);
+        p.obr = new ImageIcon("src/com/company/gra2D/PNG/background/6.png");
+
         gra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gra.setTitle("Gra Test");
         gra.setBounds(200,200, 640 + 14, 480 + 37);
