@@ -38,7 +38,6 @@ public class Panel extends JPanel implements MouseListener {
 
         g.drawImage(obr.getImage(),20,20,50,50,null);
 
-
     }
 
     @Override
