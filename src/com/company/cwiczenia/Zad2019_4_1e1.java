@@ -103,11 +103,42 @@ public class Zad2019_4_1e1 {
        //zad41a();
        //zad41b();
         //zad42();
-
-        int a = 108;
-        int b = 72;
-
-        System.out.println(NWD2(a,b));
+        File plik = new File("src/com/company/cwiczenia/liczby.txt");
+        Scanner in = new Scanner(plik);
+        int[] liczby = new int[500];
+        for(int i = 0; i < 500; i++)
+        {
+            liczby[i] = in.nextInt();
+        }
+        int aktNWD = 0;
+        int dl = 0;
+        int dlMax = 0;
+        int pos = 0;
+        int pocz = 0;
+        int j = 0;
+        for(int i = 0; i < 499; i++){
+            dl = 1;
+            aktNWD = NWD2(liczby[i], liczby[i+1]);
+            if(aktNWD > 1){
+                dl = 2;
+                for(j = i+2; j < 500; j++){
+                    aktNWD = NWD2(aktNWD, liczby[j]);
+                    if(aktNWD == 1) {
+                        break;
+                    }
+                    dl++;
+                }
+                if(dl > dlMax) {
+                    dlMax = dl;
+                    pos = j-1;
+                    pocz = i;
+                }
+            }
+        }
+        System.out.println(dlMax);
+        System.out.println(pocz + " " + pos);
+        System.out.println(liczby[pocz]);
+        System.out.println(liczby[pos]);
 
     }
 }
