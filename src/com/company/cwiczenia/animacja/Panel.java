@@ -12,6 +12,7 @@ public class Panel extends JPanel  implements KeyListener {
     int x;
     int y;
     int kier;
+    Image imgRes;
     public Panel(){
         addKeyListener(this);
         setSize(64,64);
@@ -19,16 +20,24 @@ public class Panel extends JPanel  implements KeyListener {
         int x = 0;
         int y = 0;
         kier = 0;
+        imgRes = run.getImage().getScaledInstance((137*2), (264*2), Image.SCALE_DEFAULT);
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+/*
         if(kier == 0)
             g.drawImage(run.getImage(), 0+x,0,35+x,44,0,0+(i*44),35,44+(i*44),null);
         else
             g.drawImage(run.getImage(), 35+x,0,0+x,44,0,0+(i*44),35,44+(i*44),null);
+*/
+
+        if(kier == 0)
+            g.drawImage(imgRes, 0+x,0,80+x,88,0,0+(i*88),80,88+(i*88),null);
+        else
+            g.drawImage(imgRes, 80+x,0,0+x,88,0,0+(i*88),80,88+(i*88),null);
+
     }
 
         @Override
