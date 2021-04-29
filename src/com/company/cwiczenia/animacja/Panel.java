@@ -14,7 +14,7 @@ public class Panel extends JPanel  implements KeyListener {
     int kier;
     Image imgRes;
     public Panel(){
-        addKeyListener(this);
+        //addKeyListener(this);
         setSize(64,64);
         i = 0;
         int x = 0;
