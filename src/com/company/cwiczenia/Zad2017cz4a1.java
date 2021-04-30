@@ -65,6 +65,9 @@ public class Zad2017cz4a1 {
         System.out.println(licznik);
     // Zad. dom. Dokończenie zadania 4.1 z matury 2017 czerwiec
  */
+        //    0 1 2 3 4 5 6 7 8 9
+        //a.    1 1 1
+        //b.  1 1 1 1
     cyfropodobne("123","13201");
     }
 
