@@ -13,6 +13,8 @@ public class Zad2017cz4a1 {
         Map<Character, Integer> C1 = new TreeMap<>();
         Map<Character, Integer> C2 = new TreeMap<>();
 // 1112 '1'->1 '1'->1 '1'->1 '2'->1 ---> '1'-> 1 '2' ->1
+        // "dog" "pies"//
+
         for(int i =0; i< a.length(); i++) {
             C1.put(a.charAt(i), 1);
         }
