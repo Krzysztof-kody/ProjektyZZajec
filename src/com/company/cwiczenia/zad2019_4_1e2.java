@@ -2,6 +2,9 @@ package com.company.cwiczenia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class zad2019_4_1e2 {
@@ -93,12 +96,41 @@ public class zad2019_4_1e2 {
     public static void main(String[] args) throws FileNotFoundException {
         File plik = new File("src/com/company/cwiczenia/liczby.txt");
         Scanner in = new Scanner(plik);
-
+        ArrayList<Integer> dl = new ArrayList<>();
+        int dlMax = 0;
         int[] liczby = new int[500];
         for(int i =0; i <500; i++){
             liczby[i] = in.nextInt();
         }
+        int pocz =0 , koniec = 0;
+        int tmpNWD = 0;
+        int j = 0;
+        int i;
+        for(i =0; i < 499; i++){
+            j = 0;
+            tmpNWD = NWD(liczby[i], liczby[i+1]);
+            for(j = i+2; j < 500; j ++){
+                tmpNWD = NWD(tmpNWD, liczby[j]);
+                if(tmpNWD == 1) break;
+            }
+            System.out.println(i + " : " + (j-1));
+            dl.add((j-i));
+            if(dlMax < (j-i)){
+                dlMax = j-i;
+                pocz = i;
+                koniec = j-1;
+            }
 
+        }
+        Collections.sort(dl);
+        System.out.println(dl.get(dl.size()-1));
+        System.out.println(dlMax + " [" + pocz + ", " + koniec + "]" );
+
+        // 2 4 6 8 7
+// 0 1 2 3 4
+//   i 2 2 2 1
+//   i = 0
+//   j = 4
 
     }
     }

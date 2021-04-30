@@ -13,6 +13,7 @@ public class SitoErastotenesa {
                 }
             }
         }
+
         int licz = 0;
         for(int i = 0; i< 100001; i++){
             if(liczby[i]==false) {
